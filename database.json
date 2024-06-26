@@ -1,0 +1,568 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin1",
+            "email": "admin1@example.com",
+            "password": "123456",
+            "fullname": "Nguyễn Văn A",
+            "roleID": 1
+        },
+        {
+            "id": 2,
+            "username": "admin2",
+            "email": "admin2@example.com",
+            "password": "123456",
+            "fullname": "Trần Thị B",
+            "roleID": 1
+        },
+        {
+            "id": 3,
+            "username": "teacher1",
+            "email": "teacher1@example.com",
+            "password": "123456",
+            "fullname": "Lê Văn C",
+            "roleID": 2
+        },
+        {
+            "id": 4,
+            "username": "teacher2",
+            "email": "teacher2@example.com",
+            "password": "123456",
+            "fullname": "Phạm Thị D",
+            "roleID": 2
+        },
+        {
+            "id": 5,
+            "username": "student1",
+            "email": "student1@example.com",
+            "password": "123456",
+            "fullname": "Hoàng Văn E",
+            "roleID": 3
+        },
+        {
+            "id": 6,
+            "username": "student2",
+            "email": "student2@example.com",
+            "password": "123456",
+            "fullname": "Vũ Thị F",
+            "roleID": 3
+        },
+        {
+            "id": 7,
+            "username": "student3",
+            "email": "student3@example.com",
+            "password": "123456",
+            "fullname": "Đặng Văn G",
+            "roleID": 3
+        },
+        {
+            "id": 8,
+            "username": "student4",
+            "email": "student4@example.com",
+            "password": "123456",
+            "fullname": "Ngô Thị H",
+            "roleID": 3
+        },
+        {
+            "id": 9,
+            "username": "student5",
+            "email": "student5@example.com",
+            "password": "123456",
+            "fullname": "Bùi Văn I",
+            "roleID": 3
+        },
+        {
+            "id": 10,
+            "username": "student6",
+            "email": "student6@example.com",
+            "password": "123456",
+            "fullname": "Trương Thị K",
+            "roleID": 3
+        },
+        {
+            "id": 11,
+            "username": "student7",
+            "email": "student7@example.com",
+            "password": "123456",
+            "fullname": "Lý Văn L",
+            "roleID": 3
+        },
+        {
+            "id": 12,
+            "username": "student8",
+            "email": "student8@example.com",
+            "password": "123456",
+            "fullname": "Mai Thị M",
+            "roleID": 3
+        },
+        {
+            "id": 13,
+            "username": "student9",
+            "email": "student9@example.com",
+            "password": "123456",
+            "fullname": "Nguyễn Thị N",
+            "roleID": 3
+        },
+        {
+            "id": 14,
+            "username": "student10",
+            "email": "student10@example.com",
+            "password": "123456",
+            "fullname": "Trần Văn O",
+            "roleID": 3
+        },
+        {
+            "id": 15,
+            "username": "student11",
+            "email": "student11@example.com",
+            "password": "123456",
+            "fullname": "Lê Thị P",
+            "roleID": 3
+        },
+        {
+            "id": 16,
+            "username": "student12",
+            "email": "student12@example.com",
+            "password": "123456",
+            "fullname": "Phạm Văn Q",
+            "roleID": 3
+        },
+        {
+            "id": 17,
+            "username": "student13",
+            "email": "student13@example.com",
+            "password": "123456",
+            "fullname": "Hoàng Thị R",
+            "roleID": 3
+        },
+        {
+            "id": 18,
+            "username": "student14",
+            "email": "student14@example.com",
+            "password": "123456",
+            "fullname": "Vũ Văn S",
+            "roleID": 3
+        },
+        {
+            "id": 19,
+            "username": "teacher3",
+            "email": "teacher1@example.com",
+            "password": "123456",
+            "fullname": "Nguyễn Thị T",
+            "roleID": 2
+        },
+        {
+            "id": 20,
+            "username": "teacher4",
+            "email": "teacher2@example.com",
+            "password": "123456",
+            "fullname": "Trần Văn U",
+            "roleID": 2
+        },
+        {
+            "id": 21,
+            "username": "teacher5",
+            "email": "teacher3@example.com",
+            "password": "123456",
+            "fullname": "Lê Thị V",
+            "roleID": 2
+        },
+        {
+            "id": 22,
+            "username": "teacher6",
+            "email": "teacher4@example.com",
+            "password": "123456",
+            "fullname": "Phạm Văn D",
+            "roleID": 2
+        }
+    ],
+    "roles": [
+        {
+            "id": 1,
+            "roleName": "Admin"
+        },
+        {
+            "id": 2,
+            "roleName": "Teacher"
+        },
+        {
+            "id": 3,
+            "roleName": "Student"
+        }
+    ],
+    "classes": [
+        {
+            "id": 1,
+            "className": "SE1712",
+            "subjectID": "1",
+            "lectureID": "1"
+        },
+        {
+            "id": 2,
+            "className": "SE1802",
+            "subjectID": "2",
+            "lectureID": "2"
+        },
+        {
+            "id": 3,
+            "className": "SE1735",
+            "subjectID": "3",
+            "lectureID": "3"
+        },
+        {
+            "id": 4,
+            "className": "SE1874",
+            "subjectID": "4",
+            "lectureID": "4"
+        },
+        {
+            "id": 5,
+            "className": "SE1705",
+            "subjectID": "5",
+            "lectureID": "5"
+        },
+        {
+            "id": 6,
+            "className": "SE1868",
+            "subjectID": "6",
+            "lectureID": "6"
+        }
+    ],
+    "enrollment": [
+        {
+            "id": 1,
+            "classID": 1,
+            "userID": 5
+        },
+        {
+            "id": 2,
+            "classID": 2,
+            "userID": 6
+        },
+        {
+            "id": 3,
+            "classID": 3,
+            "userID": 7
+        },
+        {
+            "id": 4,
+            "classID": 4,
+            "userID": 8
+        },
+        {
+            "id": 5,
+            "classID": 5,
+            "userID": 9
+        },
+        {
+            "id": 6,
+            "classID": 1,
+            "userID": 10
+        },
+        {
+            "id": 7,
+            "classID": 2,
+            "userID": 11
+        },
+        {
+            "id": 8,
+            "classID": 3,
+            "userID": 12
+        },
+        {
+            "id": 9,
+            "classID": 4,
+            "userID": 13
+        },
+        {
+            "id": 10,
+            "classID": 5,
+            "userID": 14
+        },
+        {
+            "id": 11,
+            "classID": 1,
+            "userID": 15
+        },
+        {
+            "id": 12,
+            "classID": 2,
+            "userID": 16
+        },
+        {
+            "id": 13,
+            "classID": 3,
+            "userID": 17
+        },
+        {
+            "id": 14,
+            "classID": 4,
+            "userID": 18
+        }
+    ],
+    "subjects": [
+        {
+            "id": 1,
+            "code": "FER202",
+            "name": "Front-End web development with React",
+            "semesterID": "2"
+        },
+        {
+            "id": 2,
+            "code": "JPD113",
+            "name": "Japanese Elementary 1-A1.1",
+            "semesterID": "1"
+        },
+        {
+            "id": 3,
+            "code": "JPD123",
+            "name": "Elementary Japanese",
+            "semesterID": "2"
+        },
+        {
+            "id": 4,
+            "code": "PRO192",
+            "name": "Object-Oriented Programming",
+            "semesterID": "1"
+        },
+        {
+            "id": 5,
+            "code": "PRJ301",
+            "name": "Web-Based Java Applications",
+            "semesterID": "2"
+        },
+        {
+            "id": 6,
+            "code": "CSD201",
+            "name": "Data Structures and Algorithms",
+            "semesterID": "1"
+        }
+    ],
+    "semesters": [
+        {
+            "id": 1,
+            "name": "Spring 2024",
+            "date": "2024-01-03"
+        },
+        {
+            "id": 2,
+            "name": "Summer 2024",
+            "date": "2024-05-03"
+        }
+    ],
+    "lecturer": [
+        {
+            "id": 1,
+            "name": "Lê Văn C"
+        },
+        {
+            "id": 2,
+            "name": "Phạm Thị D"
+        },
+        {
+            "id": 3,
+            "name": "Nguyễn Thị T"
+        },
+        {
+            "id": 4,
+            "name": "Trần Văn U"
+        },
+        {
+            "id": 5,
+            "name": "Lê Thị V"
+        },
+        {
+            "id": 6,
+            "name": "Phạm Văn D"
+        }
+    ],
+    "slots": [
+        {
+            "id": 1,
+            "slotName": "Introduction to React",
+            "detail": "Overview of React concepts",
+            "classID": 1
+        },
+        {
+            "id": 2,
+            "slotName": "Hiragana Practice",
+            "detail": "Practice recognizing and writing hiragana characters",
+            "classID": 2
+        },
+        {
+            "id": 3,
+            "slotName": "Hiragana Practice",
+            "detail": "Practice recognizing and writing hiragana characters",
+            "classID": 3
+        },
+        {
+            "id": 4,
+            "slotName": "Sorting Algorithms Comparison",
+            "detail": "Comparison of various sorting algorithms",
+            "classID": 4
+        },
+        {
+            "id": 5,
+            "slotName": "Web Application Architecture",
+            "detail": "High-level architecture design for web-based Java applications",
+            "classID": 5
+        },
+        {
+            "id": 6,
+            "slotName": "Graph Algorithms",
+            "detail": "Study and apply graph algorithms",
+            "classID": 6
+        }
+    ],
+    "assignments": [
+        {
+            "id": 1,
+            "subjectCode": "FER202",
+            "slotID": 1,
+            "content": "Complete React project",
+            "date": "2024-06-24",
+            "classID": 1
+        },
+        {
+            "id": 2,
+            "subjectCode": "FER202",
+            "slotID": 1,
+            "content": "Write unit tests for components",
+            "date": "2024-06-25",
+            "classID": 1
+        },
+        {
+            "id": 3,
+            "subjectCode": "JPD123",
+            "slotID": 3,
+            "content": "Kanji Practice",
+            "date": "2024-06-26",
+            "classID": 3
+        },
+        {
+            "id": 4,
+            "subjectCode": "JPD123",
+            "slotID": 3,
+            "content": "Japanese Culture Presentation",
+            "date": "2024-06-27",
+            "classID": 3
+        },
+        {
+            "id": 5,
+            "subjectCode": "PRO192",
+            "slotID": 4,
+            "content": "Design a web-based Java application",
+            "date": "2024-06-28",
+            "classID": 4
+        },
+        {
+            "id": 6,
+            "subjectCode": "PRJ301",
+            "slotID": 5,
+            "content": "Implement user authentication",
+            "date": "2024-06-29",
+            "classID": 5
+        },
+        {
+            "id": 7,
+            "subjectCode": "JPD113",
+            "slotID": 2,
+            "content": "Hiragana Practice",
+            "date": "2024-06-30",
+            "classID": 2
+        },
+        {
+            "id": 8,
+            "subjectCode": "JPD113",
+            "slotID": 2,
+            "content": "Introduction to Kanji",
+            "date": "2024-07-01",
+            "classID": 2
+        },
+        {
+            "id": 9,
+            "subjectCode": "CSD201",
+            "slotID": 6,
+            "content": "Sorting Algorithms Comparison",
+            "date": "2024-07-02",
+            "classID": 6
+        },
+        {
+            "id": 10,
+            "subjectCode": "CSD201",
+            "slotID": 6,
+            "content": "Graph Algorithms",
+            "date": "2024-07-03",
+            "classID": 6
+        }
+    ],
+    "questions": [
+        {
+            "id": 1,
+            "title": "How does React handle state?",
+            "content": "I'm confused about state management in React. Can someone explain?",
+            "subjectCode": "FER202",
+            "slotID": 1
+        },
+        {
+            "id": 2,
+            "title": "What are the benefits of using Redux?",
+            "content": "Is Redux necessary for all React projects?",
+            "subjectCode": "FER202",
+            "slotID": 1
+        },
+        {
+            "id": 3,
+            "title": "How do you write hiragana characters?",
+            "content": "I'm practicing hiragana. Any tips?",
+            "subjectCode": "JPD113",
+            "slotID": 2
+        },
+        {
+            "id": 4,
+            "title": "What's your favorite aspect of Japanese culture?",
+            "content": "Share your thoughts on Japanese traditions, food, or art.",
+            "subjectCode": "JPD123",
+            "slotID": 3
+        },
+        {
+            "id": 5,
+            "title": "Which design pattern do you find most useful in Java applications?",
+            "content": "Discuss your experiences with design patterns.",
+            "subjectCode": "PRO192",
+            "slotID": 4
+        },
+        {
+            "id": 6,
+            "title": "How do you approach graph algorithms?",
+            "content": "Share insights on solving graph-related problems.",
+            "subjectCode": "CSD201",
+            "slotID": 6
+        },
+        {
+            "id": 7,
+            "title": "What is the significance of HTTP status codes?",
+            "content": "Explain the meaning of different HTTP status code ranges (e.g., 200-299, 300-399, 400-499, 500-599) and their implications in web development.",
+            "subjectCode": "PRJ301",
+            "slotID": 5
+        },
+        {
+            "id": 8,
+            "title": "How do you send a GIF image as an HTTP response?",
+            "content": "Describe the necessary steps to send a GIF image to the client as a response to an HTTP request.",
+            "subjectCode": "PRJ301",
+            "slotID": 5
+        }
+    ],
+    "answers": [
+        {
+            "id": 1,
+            "userID": 5,
+            "questionID": 1,
+            "vote": 10,
+            "subjectCode": "FER202",
+            "content": "React handles state using component state (useState) and context (useContext). Component state allows individual components to manage their own state, while context provides a way to share state across components."
+        }
+    ]
+}
