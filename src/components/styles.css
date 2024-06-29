@@ -1,0 +1,90 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .sidenav {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .sidenav .logo img {
+    max-width: 100%;
+  }
+  
+  .sidenav .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidenav .nav-links a {
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .header {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .group-component {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .group-component h2 {
+    margin-top: 0;
+  }
+  
+  .content-box {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .group-actions button {
+    margin-right: 10px;
+  }
+  
+  .group-info {
+    margin-top: 20px;
+  }
+  
+  .chart-summary {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .chart-icon {
+    margin-right: 10px;
+  }
+  
+  .join-stream {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .pass-criteria {
+    margin-top: 20px;
+  }
+  
