@@ -1,7 +1,9 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Nav, Card, Button, Form, CardText } from 'react-bootstrap';
+import React, { useEffect, useState, useContext } from 'react';
+import { Container, Row, Col, Nav, Card, Button, Form } from 'react-bootstrap';
 import { FaHome, FaBook, FaCalendar, FaHeadset, FaQuestion, FaUserCircle, FaFilePdf, FaChalkboardTeacher, FaUsers } from 'react-icons/fa';
+import { AuthContext } from '../context/AuthContext'; // Assuming this is the correct path to your AuthContext
+import LogoutButton from './LogoutButton'; // Import the LogoutButton component
 
 function Home() {
   const [classes, setClasses] = useState([]);
@@ -9,6 +11,7 @@ function Home() {
   const [semesters, setSemesters] = useState([]);
   const [enrollments, setEnrollments] = useState([]);
   const [selectedSemesterId, setSelectedSemesterId] = useState(null);
+  const { userId, fullname, roleName } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,7 +42,7 @@ function Home() {
   };
 
   const filteredSubjects = selectedSemesterId 
-    ? subjects.filter(subject => subject.semesterID == selectedSemesterId)
+    ? subjects.filter(subject => subject.semesterID === selectedSemesterId)
     : subjects;
 
   return (
@@ -51,11 +54,21 @@ function Home() {
               <img style={{ width: '70px' }} src="logo.png" alt="FPT Logo" className="logo" />
               <p style={{ marginLeft: '10px', marginTop: '10px', color: '#0768B1' }}>Education</p>
             </Nav.Item>
-            <Nav.Item className='d-flex mt-3'>
-              <Nav.Link active href="#" style={{color: 'black'}}>
-                <FaUserCircle/> NameStudent
-              </Nav.Link>
-            </Nav.Item>
+            {userId ? (
+              <>
+                <Nav.Item className='d-flex mt-3'>
+                  <Nav.Link active href="#" style={{color: 'black'}}>
+                    <FaUserCircle/> {fullname} ({roleName})
+                  </Nav.Link>
+                </Nav.Item>
+              </>
+            ) : (
+              <Nav.Item>
+                <Nav.Link href="/login" style={{color: 'black'}}>
+                <FaUserCircle/> Login
+                </Nav.Link>
+              </Nav.Item>
+            )}
             <Nav.Item>
               <Nav.Link href="#" style={{color: 'black'}}>
                 <FaHome /> Home
@@ -86,6 +99,11 @@ function Home() {
                 <FaQuestion /> FAQ
               </Nav.Link>
             </Nav.Item>
+            {userId ? (
+              <Nav.Item>
+              <LogoutButton /> {/* Replace the static Logout link with LogoutButton */}
+            </Nav.Item>
+            ) : null}
           </Nav>
         </Col>
 
@@ -126,7 +144,7 @@ function Home() {
                     <Card.Title className='d-flex' style={{height: '50px'}}>{subject.name}</Card.Title>
                     <Card.Text>
                       {classes.map((classItem) => {
-                          if (classItem.subjectID == subject.id){
+                          if (classItem.subjectID === subject.id){
                               return (
                                 <Card.Text key={classItem.id} className='d-flex mt-3'>
                                   <FaChalkboardTeacher style={{color: 'lightgrey', marginRight: '5px', marginTop: '5px'}}/>
