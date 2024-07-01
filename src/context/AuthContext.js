@@ -1,37 +1,52 @@
 import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
 const AuthContext = createContext();
 
-const AuthProvider = ({ children }) => {
-  const [role, setRole] = useState(() => {
-    // Lấy giá trị từ LocalStorage khi khởi tạo
-    const savedRole = localStorage.getItem('role');
-    return savedRole ? JSON.parse(savedRole) : null;
-  });
+export const AuthProvider = ({ children }) => {
+  const [userId, setUserId] = useState(null);
+  const [fullname, setFullname] = useState('');
+  const [roleName, setRoleName] = useState('');
 
   useEffect(() => {
-    // Lưu giá trị vào LocalStorage khi role thay đổi
-    if (role) {
-      localStorage.setItem('role', JSON.stringify(role));
-    } else {
-      localStorage.removeItem('role');
+    const storedUserId = localStorage.getItem('userId');
+    if (storedUserId) {
+      setUserId(JSON.parse(storedUserId));
     }
-  }, [role]);
+  }, []);
 
-  const login = (role) => {
-    setRole(role);
+  const login = (userId) => {
+    setUserId(userId);
+    localStorage.setItem('userId', JSON.stringify(userId));
   };
 
   const logout = () => {
-    setRole(null);
-    localStorage.removeItem('role');
+    setUserId(null);
+    localStorage.removeItem('userId');
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      if (userId) {
+        const usersResponse = await axios.get(`http://localhost:9999/users/${userId}`);
+        const rolesResponse = await axios.get(`http://localhost:9999/roles`);
+
+        const user = usersResponse.data;
+        const userRole = rolesResponse.data.find(role => role.id == user.roleID);
+
+        setFullname(user.fullname);
+        setRoleName(userRole.roleName);
+      }
+    };
+
+    fetchData();
+  }, [userId]);
+
   return (
-    <AuthContext.Provider value={{ role, login, logout }}>
+    <AuthContext.Provider value={{ userId, login, logout, fullname, roleName }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export { AuthContext, AuthProvider };
+export { AuthContext };
