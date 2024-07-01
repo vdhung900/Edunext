@@ -28,7 +28,7 @@ const Login = () => {
 
 
   return (
-    <Container>
+    <Container className="login-container">
       <Row className="justify-content-md-center mt-3">
         <Col md={4} className="text-center">
           <img style={{ width: '70px' }} src="logo.png" alt="FPT Logo" className="logo mb-2" />
