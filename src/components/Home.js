@@ -32,7 +32,6 @@ function Home() {
 
     fetchData();
   }, []);
-
   const handleSelected = (semesterId) => {
     setSelectedSemesterId(semesterId);
   };
