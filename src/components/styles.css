@@ -87,4 +87,7 @@ body, html {
   .pass-criteria {
     margin-top: 20px;
   }
-  
+
+  .login-container {
+    display: block;
+  }
