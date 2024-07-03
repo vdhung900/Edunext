@@ -25,7 +25,7 @@ const Assignments = () => {
     };
 
     const filteredAssignments = selectedContent
-        ? assignments.filter(assignment => assignment.content === selectedContent)
+        ? assignments.filter(assignment => assignment.content == selectedContent)
         : assignments;
 
     return (
@@ -58,7 +58,7 @@ const Assignments = () => {
                                     </Card.Body>
 
                                     <Card.Footer className="d-flex justify-content-between">
-                                        <Link to={`/assignment/${assignment.id}`} className="btn btn-primary">
+                                        <Link to={`/assignments/${assignment.id}`} className="btn btn-primary">
                                             View Assignment
                                         </Link>
                                     </Card.Footer>

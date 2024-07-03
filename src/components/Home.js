@@ -37,11 +37,11 @@ function Home() {
   };
 
   const countEnrollments = (classID) => {
-    return enrollments.filter(enroll => enroll.classID === classID).length;
+    return enrollments.filter(enroll => enroll.classID == classID).length;
   };
 
   const filteredSubjects = selectedSemesterId 
-    ? subjects.filter(subject => subject.semesterID === selectedSemesterId)
+    ? subjects.filter(subject => subject.semesterID == selectedSemesterId)
     : subjects;
 
   return (
@@ -74,7 +74,7 @@ function Home() {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="#" style={{color: 'black'}}>
+              <Nav.Link href="/assignments" style={{color: 'black'}}>
                 <FaBook /> Assignments
               </Nav.Link>
             </Nav.Item>
@@ -143,7 +143,7 @@ function Home() {
                     <Card.Title className='d-flex' style={{height: '50px'}}>{subject.name}</Card.Title>
                     <Card.Text>
                       {classes.map((classItem) => {
-                          if (classItem.subjectID === subject.id){
+                          if (classItem.subjectID == subject.id){
                               return (
                                 <Card.Text key={classItem.id} className='d-flex mt-3'>
                                   <FaChalkboardTeacher style={{color: 'lightgrey', marginRight: '5px', marginTop: '5px'}}/>
