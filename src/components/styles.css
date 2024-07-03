@@ -53,11 +53,18 @@ body, html {
   }
   
   .content-box {
+    height: 100%;
     background-color: #f1f1f1;
     padding: 10px;
     border-radius: 4px;
   }
-  
+  .content-box1 {
+    background-color: #f1dcdc;
+    padding: 5px; 
+    border-radius: 4px;
+    font-size: 15px; 
+    display: inline-block; 
+}
   .group-actions button {
     margin-right: 10px;
   }
@@ -91,3 +98,11 @@ body, html {
   .login-container {
     display: block;
   }
+.text-size{
+  font-size: 12px; 
+}
+.text-content{
+  font-size: 12px; 
+  margin-right: 10px; 
+  margin-left: 10px;
+}

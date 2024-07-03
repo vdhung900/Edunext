@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
 import Question from './pages/Question';
 import Login from './pages/Login';
+import AssignmentDetail from './components/AssignmentDetail';
+import Assignments from './pages/Assignments';
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
          <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path="/question/:id" element={<Question />} />
-            <Route path='/login' element={<Login/>}/>
+            <Route path='/login' element={<Login/>} />
+            <Route path='/assignment' element={<Assignments/>} />
+            <Route path="/assignment/:id" element={<AssignmentDetail />} />
          </Routes>
       </BrowserRouter>
     </div>

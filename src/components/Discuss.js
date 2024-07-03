@@ -56,7 +56,7 @@ const Discuss = ({ answers, onSend, onEdit, onDelete }) => {
                             <Menu
                                 anchorEl={anchorEl}
                                 keepMounted
-                                open={Boolean(anchorEl) && editId === answer.id}
+                                open={Boolean(anchorEl) && editId == answer.id}
                                 onClose={handleMenuClose}
                             >
                                 <MenuItem onClick={() => handleEdit(answer)}>
@@ -68,7 +68,7 @@ const Discuss = ({ answers, onSend, onEdit, onDelete }) => {
                             </Menu>
                         </Box>
                     </Box>
-                    {editId === answer.id ? (
+                    {editId == answer.id ? (
                         <Box>
                             <TextField
                                 fullWidth
