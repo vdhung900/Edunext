@@ -3,7 +3,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Container, Row, Col, Nav, Card, Button, Form } from 'react-bootstrap';
 import { FaHome, FaBook, FaCalendar, FaHeadset, FaQuestion, FaUserCircle, FaFilePdf, FaChalkboardTeacher, FaUsers } from 'react-icons/fa';
 import { AuthContext } from '../context/AuthContext'; // Assuming this is the correct path to your AuthContext
-import LogoutButton from './LogoutButton'; // Import the LogoutButton component
+import SideBar from './SideBar';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const [classes, setClasses] = useState([]);
@@ -12,6 +13,9 @@ function Home() {
   const [enrollments, setEnrollments] = useState([]);
   const [selectedSemesterId, setSelectedSemesterId] = useState(null);
   const { userId, fullname, roleName } = useContext(AuthContext);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,72 +46,22 @@ function Home() {
   };
 
   const filteredSubjects = selectedSemesterId 
-    ? subjects.filter(subject => subject.semesterID === selectedSemesterId)
+    ? subjects.filter(subject => subject.semesterID == selectedSemesterId)
     : subjects;
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  
   return (
     <Container fluid>
       <Row>
-        <Col md={2} className="bg-light sidebar" style={{height: '740px'}}>
-          <Nav className="flex-column">
-            <Nav.Item className="logo-item d-flex">
-              <img style={{ width: '70px' }} src="logo.png" alt="FPT Logo" className="logo" />
-              <p style={{ marginLeft: '10px', marginTop: '10px', color: '#0768B1' }}>Education</p>
-            </Nav.Item>
-            {userId ? (
-              <>
-                <Nav.Item className='d-flex mt-3'>
-                  <Nav.Link active href="#" style={{color: 'black'}}>
-                    <FaUserCircle/> {fullname} ({roleName})
-                  </Nav.Link>
-                </Nav.Item>
-              </>
-            ) : (
-              <Nav.Item>
-                <Nav.Link href="/login" style={{color: 'black'}}>
-                <FaUserCircle/> Login
-                </Nav.Link>
-              </Nav.Item>
-            )}
-            <Nav.Item>
-              <Nav.Link href="#" style={{color: 'black'}}>
-                <FaHome /> Home
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="#" style={{color: 'black'}}>
-                <FaBook /> Assignments
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="#" style={{color: 'black'}}>
-                <FaCalendar /> Upcoming slots
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="#" style={{color: 'black'}}>
-                <FaFilePdf /> Read user guide
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="#" style={{color: 'black'}}>
-                <FaHeadset /> Contact Support
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="#" style={{color: 'black'}}>
-                <FaQuestion /> FAQ
-              </Nav.Link>
-            </Nav.Item>
-            {userId ? (
-              <Nav.Item>
-              <LogoutButton /> {/* Replace the static Logout link with LogoutButton */}
-            </Nav.Item>
-            ) : null}
-          </Nav>
+        <Col md={isSidebarOpen ? 2 : 1}>
+          <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         </Col>
 
-        <Col md={10} className="main-content">
+        <Col md={isSidebarOpen ? 10 : 11} className="main-content">
           <div className="d-flex flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <div>
               <h1 className="h2">Courses</h1>
@@ -144,7 +98,7 @@ function Home() {
                     <Card.Title className='d-flex' style={{height: '50px'}}>{subject.name}</Card.Title>
                     <Card.Text>
                       {classes.map((classItem) => {
-                          if (classItem.subjectID === subject.id){
+                          if (classItem.subjectID == subject.id){
                               return (
                                 <Card.Text key={classItem.id} className='d-flex mt-3'>
                                   <FaChalkboardTeacher style={{color: 'lightgrey', marginRight: '5px', marginTop: '5px'}}/>
@@ -158,7 +112,7 @@ function Home() {
                     <Card.Text><FaUsers style={{color: 'lightgrey'}}/> Number of students: {countEnrollments(subject.id)}</Card.Text>
                   </Card.Body>
                   <Card.Footer className="d-flex justify-content-between">
-                    <Button variant="primary" href="#">
+                    <Button variant="primary" onClick={() => navigate(`/course/${subject.id}`)}>
                       Go to course
                     </Button>
                   </Card.Footer>
