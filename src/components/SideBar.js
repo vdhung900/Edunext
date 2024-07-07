@@ -26,6 +26,9 @@ const SideBar = ({ isSidebarOpen, toggleSidebar }) => {
           <img style={{ width: '70px' }} src="/logo.png" alt="FPT Logo" className="logo" />
           {isSidebarOpen && <p style={{ marginLeft: '10px', marginTop: '10px', color: '#0768B1' }}>Education</p>}
         </Nav.Item>
+        <Nav.Item className="toggle-sidebar d-flex mt-3">
+          <FaBars style={{ cursor: 'pointer', marginLeft: '15px' }} onClick={toggleSidebar} />
+        </Nav.Item>
         {userId ? (
           <>
             <Nav.Item className='d-flex mt-3'>
@@ -36,15 +39,12 @@ const SideBar = ({ isSidebarOpen, toggleSidebar }) => {
             </Nav.Item>
           </>
         ) : (
-          <Nav.Item>
+          <Nav.Item className='d-flex mt-3'>
             <Nav.Link href="/login" style={{color: 'black'}}>
               <FaUserCircle /> {isSidebarOpen && ' Login'}
             </Nav.Link>
           </Nav.Item>
         )}
-        <Nav.Item className="toggle-sidebar d-flex mt-3">
-          <FaBars style={{ cursor: 'pointer', marginLeft: '15px' }} onClick={toggleSidebar} />
-        </Nav.Item>
         <Nav.Item className='d-flex mt-3'>
           <Nav.Link onClick={() => navigate(`/`)} style={{ color: 'black' }}>
             <FaHome />
