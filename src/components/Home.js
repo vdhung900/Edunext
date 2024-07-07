@@ -14,8 +14,11 @@ function Home() {
   const [selectedSemesterId, setSelectedSemesterId] = useState(null);
   const { userId, fullname, roleName } = useContext(AuthContext);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
   const navigate = useNavigate();
+
+    if(!userId){
+        navigate('/login');
+    }
 
   useEffect(() => {
     const fetchData = async () => {

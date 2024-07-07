@@ -1,18 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState, useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Tabs, Tab, Box } from '@mui/material';
 import axios from 'axios';
-import SideNav from '../components/SideNav';
 import Discuss from '../components/Discuss';
 import Group from '../components/Group';
 import TeacherMessage from '../components/TeacherMessage';
+import SideBar from '../components/SideBar';
+import '../components/styles.css';
+import { AuthContext } from '../context/AuthContext';
 
 function Question() {
     const { id } = useParams();
     const [question, setQuestion] = useState({});
     const [answers, setAnswers] = useState([]);
-    const [currentTab, setCurrentTab] = useState('group');
+    const [currentTab, setCurrentTab] = useState('discuss');
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const { userId } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    if (!userId) {
+        navigate('/login');
+    }
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
 
     const handleChange = (event, newValue) => {
         setCurrentTab(newValue);
@@ -32,7 +44,7 @@ function Question() {
             }
         };
         fetchData();
-    }, [id]);
+    }, [id, answers]);
 
     const formatTimestamp = (timestamp) => {
         const date = new Date(timestamp);
@@ -46,52 +58,35 @@ function Question() {
         return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
     };
 
-    const handleSendAnswer = async (content) => {
-        try {
-            const newAnswer = {
-                userID: 'currentUser',
-                questionID: Number(id),
-                vote: 0,
-                content: content,
-                timestamp: formatTimestamp(new Date()),
-            };
-            await axios.post(`http://localhost:9999/answers`, newAnswer);
-            setAnswers([...answers, newAnswer]);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    const renderContent = () => {
-        switch (currentTab) {
-            case 'group':
-                return <Group />;
-            case 'discuss':
-                return <Discuss answers={answers} onSend={handleSendAnswer} />;
-            case 'teacher-message':
-                return <TeacherMessage />;
-            default:
-                return <Group />;
-        }
-    };
-
     return (
         <Container fluid>
             <Row>
-                <Col md={2} className="bg-light sidebar">
-                    <SideNav />
+                <Col md={isSidebarOpen ? 2 : 1} className="p-0">
+                    <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                 </Col>
-                <Col md={10} className="main-content">
+                <Col md={isSidebarOpen ? 10 : 11}>
+                    <Row className='mt-3'>
+                        <Col style={{ display: 'flex' }}>
+                            <h5
+                                style={{ textDecoration: 'underline', color: '#297FFD', cursor: 'pointer', marginRight: '10px' }}
+                                onClick={() => navigate('/')}
+                            >
+                                Home
+                            </h5>
+                            <h5>/ {question.title} </h5>
+                        </Col>
+                    </Row>
                     <div className="main-content">
                         <div className="group-component">
-                            <h2>(Question) {question.title}</h2>
+                            <h2>(Question) {question.title}</h2><br />
                             <div className="content-box">
-                                <div className="content">
-                                    <h4>Content</h4>
+                                <div className="content" style={{ marginLeft: '10px' }}>
+                                    <h5>Content</h5>
                                     <hr />
                                     <p>{question.content}</p>
                                 </div>
                             </div>
+                            <br />
                             <p>
                                 Discussion time has been started.<br />
                                 Students can comment and vote for comments during this time.<br />
@@ -105,7 +100,17 @@ function Question() {
                                 <Tab label="Teacher's Message" value="teacher-message" />
                             </Tabs>
                         </Box>
-                        {renderContent()}
+                        {currentTab === 'discuss' && (
+                            <Discuss
+                                answers={answers}
+                                setAnswers={setAnswers}
+                                userId={userId}
+                                questionId={id}
+                                formatTimestamp={formatTimestamp}
+                            />
+                        )}
+                        {currentTab === 'group' && <Group />}
+                        {currentTab === 'teacher-message' && <TeacherMessage />}
                     </div>
                 </Col>
             </Row>

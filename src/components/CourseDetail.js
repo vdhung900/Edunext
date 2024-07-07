@@ -1,10 +1,10 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Button, Col, Container, DropdownButton, Dropdown, Row, Table, Accordion } from 'react-bootstrap';
 import { FaCommentDots, FaQuestionCircle } from 'react-icons/fa';
-
 import { useNavigate, useParams } from 'react-router-dom';
 import SideBar from './SideBar';
+import { AuthContext } from '../context/AuthContext';
 
 function CourseDetail() {
     const { id } = useParams();
@@ -17,8 +17,13 @@ function CourseDetail() {
     const [questions, setQuestions] = useState([]);
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const { userId, fullname, roleName } = useContext(AuthContext);
 
     const navigate = useNavigate();
+    
+    if(!userId){
+        navigate('/login');
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -168,7 +173,7 @@ function CourseDetail() {
                                                                 {
                                                                     questions.filter((question) => question.slotID == slot.id).map((question) => (
                                                                         <tr key={question.id}>
-                                                                            <td><FaQuestionCircle /> {question.title}</td>
+                                                                            <td><a href={`/question/${question.id}`}><FaQuestionCircle /> {question.title}</a></td>
                                                                             <td>
                                                                                 <span className="text-danger">Custom</span>
                                                                                 <span style={{ marginLeft: '20px', border: '1px solid black', backgroundColor: '#skyblue', border: 'none' }} className="text-primary">On-going</span>
