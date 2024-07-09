@@ -148,7 +148,6 @@ const Discuss = ({ answers, setAnswers, userId, questionId, formatTimestamp }) =
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                             <Avatar sx={{ border: '1px solid black', marginRight: '10px' }} src='../ava.png'></Avatar>
                             <Box>
-                                <Typography variant="body1"><b>userID: {answer.userID}, answeid: {answer.id}</b></Typography>
                                 <UserDetail userID={answer.userID} userDetails={userDetails} />
                                 <Typography variant="body2" color="textSecondary">{answer.timestamp}</Typography>
                             </Box>
