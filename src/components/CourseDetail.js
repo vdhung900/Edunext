@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Col, Container, DropdownButton, Dropdown, Row, Table, Accordion } from 'react-bootstrap';
 import { FaCommentDots, FaQuestionCircle } from 'react-icons/fa';
+
 import { useNavigate, useParams } from 'react-router-dom';
 import SideBar from './SideBar';
 import { AuthContext } from '../context/AuthContext';
@@ -17,13 +18,8 @@ function CourseDetail() {
     const [questions, setQuestions] = useState([]);
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-    const { userId, fullname, roleName } = useContext(AuthContext);
 
     const navigate = useNavigate();
-    
-    if(!userId){
-        navigate('/login');
-    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -113,19 +109,16 @@ function CourseDetail() {
                                 id="dropdown-class-button"
                                 title="My Class"
                                 variant="light"
-                                
                             >
-                                <Dropdown.Item style={{ display: 'flex' }}>
-                                    {
-                                        classes.map((cls) => {
-                                            const semester = semesters.find((item) => item.id == subjects.semesterID);
-                                            if (cls.subjectID == subjects.id && semester) {
-                                                return <Dropdown.Item key={cls.id}>{cls.className} - {subjects.code} - APHL - {semester.name}</Dropdown.Item>
-                                            }
-                                            return null;
-                                        })
-                                    }
-                                </Dropdown.Item>
+                                {
+                                    classes.map((cls) => {
+                                        const semester = semesters.find((item) => item.id == subjects.semesterID);
+                                        if (cls.subjectID == subjects.id && semester) {
+                                            return <Dropdown.Item key={cls.id}>{cls.className} - {subjects.code} - APHL - {semester.name}</Dropdown.Item>
+                                        }
+                                        return null;
+                                    })
+                                }
                             </DropdownButton>
                         </Col>
                         <Col md={5}>
@@ -153,15 +146,15 @@ function CourseDetail() {
                         <Col>
                             <Accordion>
                                 {
-                                    classes.map((classes, idx) => {
-                                        const slot = slots.find((slot) => slot.classID == classes.id);
-                                        if (classes.subjectID == subjects.id) {
-                                            return (
-                                                <Accordion.Item key={classes.id}>
-                                                    <Accordion.Header>Slot 1: {slot.slotName}</Accordion.Header>
+                                    classes.map((cls) => {
+                                        if (cls.subjectID == subjects.id) {
+                                            const filteredSlots = slots.filter((slot) => slot.classID == cls.id);
+                                            return filteredSlots.map((slot, index) => (
+                                                <Accordion.Item key={slot.id} eventKey={`${cls.id}-${index}`}>
+                                                    <Accordion.Header>Slot {index + 1}: {slot.slotName}</Accordion.Header>
                                                     <Accordion.Body>
-                                                    <p><strong>15:20 09/05/2024 - 17:40 09/05/2024</strong></p>
-                                                    <p>{slot.detail}</p>
+                                                        <p><strong>{slot.timestamp}</strong></p>
+                                                        <p>{slot.detail}</p>
                                                         <Table striped bordered hover>
                                                             <thead>
                                                                 <tr>
@@ -173,7 +166,7 @@ function CourseDetail() {
                                                                 {
                                                                     questions.filter((question) => question.slotID == slot.id).map((question) => (
                                                                         <tr key={question.id}>
-                                                                            <td><a href={`/question/${question.id}`}><FaQuestionCircle /> {question.title}</a></td>
+                                                                             <td><a href={`/question/${question.id}`}><FaQuestionCircle /> {question.title}</a></td>
                                                                             <td>
                                                                                 <span className="text-danger">Custom</span>
                                                                                 <span style={{ marginLeft: '20px', border: '1px solid black', backgroundColor: '#skyblue', border: 'none' }} className="text-primary">On-going</span>
@@ -185,7 +178,7 @@ function CourseDetail() {
                                                         </Table>
                                                     </Accordion.Body>
                                                 </Accordion.Item>
-                                            );
+                                            ));
                                         }
                                         return null;
                                     })
