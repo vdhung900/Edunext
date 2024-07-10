@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import FQA from './FQA';
 import ContactSupport from './ContactSupport';
 import { AuthContext } from '../context/AuthContext';
-import LogoutButton from './LogoutButton'; 
-
+import LogoutButton from './LogoutButton';
+import './SideBar.css'; // Ensure you import your CSS file
 
 const SideBar = ({ isSidebarOpen, toggleSidebar }) => {
   const navigate = useNavigate();
@@ -21,68 +21,59 @@ const SideBar = ({ isSidebarOpen, toggleSidebar }) => {
   const handleCloseContact = () => setShowContact(false);
 
   return (
-    <div className={`bg-light sidebar ${isSidebarOpen ? 'open' : 'closed'}`} style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+    <div className={`bg-light sidebar ${isSidebarOpen ? 'open' : 'closed'}`} style={{ display: 'flex', flexDirection: 'column', height: '100vh', borderRight: '1px solid #ccc' }}>
       <Nav className="flex-column" style={{ flexGrow: 1 }}>
         <Nav.Item className="logo-item d-flex align-items-center">
-          <img style={{ width: '70px' }} src="/logo.png" alt="FPT Logo" className="logo" />
-          {isSidebarOpen && <p style={{ marginLeft: '10px', marginTop: '10px', color: '#0768B1' }}>Education</p>}
+          <img style={{ width: '100%' }} src="/logo.png" alt="FPT Logo" className="logo" onClick={() => navigate('/')}/>
         </Nav.Item>
-        {userId ? (
-          <Dropdown className='d-flex mt-3'>
-            <Dropdown.Toggle  className="d-flex align-items-center" style={{ color: 'black', backgroundColor: '#E2E0DB', width: '100%' }}>
-              <FaUserCircle />
-              {isSidebarOpen && ` ${fullname} (${roleName})`}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item>
-                <LogoutButton />
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        ) : (
-          <Nav.Item>
-            <Nav.Link href="/login" style={{color: 'black'}}>
-              <FaUserCircle /> {isSidebarOpen && ' Login'}
-            </Nav.Link>
-          </Nav.Item>
-        )}
-        <Nav.Item className="toggle-sidebar d-flex mt-3">
-          <FaBars style={{ cursor: 'pointer', marginLeft: '15px' }} onClick={toggleSidebar} />
+        <Dropdown className='d-flex mt-3' style={{ marginLeft: '10px' }}>
+          <Dropdown.Toggle className="d-flex align-items-center dropdown-toggle">
+            <FaUserCircle />
+            <div style={{ marginLeft: '5px' }}></div>{isSidebarOpen && ` ${fullname} (${roleName})`}
+          </Dropdown.Toggle>
+          <Dropdown.Menu style={{ width: '80%', marginLeft: '10px' }}>
+            <Dropdown.Item as="div">
+              <LogoutButton />
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Nav.Item className="toggle-sidebar d-flex mt-3" onClick={toggleSidebar}>
+          <FaBars style={{ marginLeft: '30px' }} />
         </Nav.Item>
         <Nav.Item className='d-flex mt-3'>
-          <Nav.Link onClick={() => navigate(`/`)} style={{ color: 'black' }}>
+          <Nav.Link onClick={() => navigate('/')} className="nav-link">
             <FaHome />
-            {isSidebarOpen && ' Home'}
+            <div style={{ marginLeft: '5px' }}> {isSidebarOpen && ' Home'}</div>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className='d-flex mt-3'>
-        <Nav.Link href="/assignment" style={{ color: 'black' }}>
+          <Nav.Link onClick={() => navigate('/assignment')} className="nav-link">
             <FaBook />
-            {isSidebarOpen && ' Assignments'}
+            <div style={{ marginLeft: '5px' }}></div>{isSidebarOpen && ' Assignments'}
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className='d-flex mt-3'>
-          <Nav.Link href="#" style={{ color: 'black' }}>
+          <Nav.Link onClick={() => navigate('/upcoming-slots')} className="nav-link">
             <FaCalendar />
-            {isSidebarOpen && ' Upcoming slots'}
+            <div style={{ marginLeft: '5px' }}></div>{isSidebarOpen && ' Upcoming slots'}
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className='d-flex mt-3'>
-          <Nav.Link href={`${process.env.PUBLIC_URL}/user_guide.pdf`} download="user_guide.pdf" style={{ color: 'black' }}>
+          <Nav.Link href={`${process.env.PUBLIC_URL}/user_guide.pdf`} download="user_guide.pdf" className="nav-link">
             <FaFilePdf />
-            {isSidebarOpen && ' Read user guide'}
+            <div style={{ marginLeft: '5px' }}></div>{isSidebarOpen && ' Read user guide'}
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className='d-flex mt-3'>
-          <Nav.Link href="#" style={{ color: 'black' }} onClick={handleShowContact}>
+          <Nav.Link onClick={handleShowContact} className="nav-link">
             <FaHeadset />
-            {isSidebarOpen && ' Contact Support'}
+            <div style={{ marginLeft: '5px' }}></div>{isSidebarOpen && ' Contact Support'}
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className='d-flex mt-3'>
-          <Nav.Link href="#" style={{ color: 'black' }} onClick={handleShowFQA}>
+          <Nav.Link onClick={handleShowFQA} className="nav-link">
             <FaQuestion />
-            {isSidebarOpen && ' FAQ'}
+            <div style={{ marginLeft: '5px' }}></div>{isSidebarOpen && ' FAQ'}
           </Nav.Link>
         </Nav.Item>
       </Nav>

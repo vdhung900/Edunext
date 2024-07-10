@@ -60,7 +60,7 @@ function Home() {
   return (
     <Container fluid>
       <Row>
-        <Col md={isSidebarOpen ? 2 : 1}>
+        <Col md={isSidebarOpen ? 2 : 1} style={{ paddingLeft: '0px' }}>
           <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         </Col>
 
@@ -68,9 +68,6 @@ function Home() {
           <div className="d-flex flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <div>
               <h1 className="h2">Courses</h1>
-            </div>
-            <div style={{ marginLeft: '30px' }}>
-              <h1 className="h2">Project</h1>
             </div>
           </div>
 
