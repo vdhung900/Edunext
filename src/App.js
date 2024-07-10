@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path='*' element={<Home />} />
           <Route path='/assignment/:id' element={<Assignment />} />
-          <Route path="/question/:id" element={<Question />} />
+          <Route path="/question/:id/:subid" element={<Question />} />
           <Route path='/login' element={<Login />} />
           <Route path='/course/:id' element={<CourseDetail />} />
           <Route path='/assignment' element={<List_Assignment />} />

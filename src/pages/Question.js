@@ -11,11 +11,12 @@ import '../components/styles.css';
 import { AuthContext } from '../context/AuthContext';
 
 function Question() {
-    const { id } = useParams();
+    const { id, subid } = useParams();
     const [question, setQuestion] = useState({});
     const [answers, setAnswers] = useState([]);
     const [currentTab, setCurrentTab] = useState('discuss');
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [subject, setSubject] = useState({});
     const { userId } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -39,6 +40,8 @@ function Question() {
                     params: { questionID: id }
                 });
                 setAnswers(answersResponse.data);
+                const subjectResponse = await axios.get(`http://localhost:9999/subjects/${subid}`);
+                setSubject(subjectResponse.data);
             } catch (error) {
                 console.error(error);
             }
@@ -68,12 +71,14 @@ function Question() {
                     <Row className='mt-3'>
                         <Col style={{ display: 'flex' }}>
                             <h5
-                                style={{ textDecoration: 'underline', color: '#297FFD', cursor: 'pointer', marginRight: '10px' }}
+                                style={{ color: '#297FFD', cursor: 'pointer', marginRight: '10px' }}
                                 onClick={() => navigate('/')}
-                            >
-                                Home
-                            </h5>
-                            <h5>/ {question.title} </h5>
+                            >Home</h5><h5>/</h5>
+                            <h5
+                                style={{ color: '#297FFD', cursor: 'pointer', margin: '0px 10px' }}
+                                onClick={() => navigate('/course/' + subid)}
+                            > {subject.name} </h5><h5>/</h5>
+                            <h5 style={{margin: '0px 10px'}}> {question.title} </h5>
                         </Col>
                     </Row>
                     <div className="main-content">

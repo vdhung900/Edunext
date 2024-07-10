@@ -57,12 +57,12 @@ function CourseDetail() {
                     <Row className='mt-3'>
                         <Col style={{ display: 'flex' }}>
                             <h5
-                                style={{ textDecoration: 'underline', color: '#297FFD', cursor: 'pointer', marginRight: '10px' }}
+                                style={{ color: '#297FFD', cursor: 'pointer', marginRight: '10px' }}
                                 onClick={() => navigate('/')}
                             >
                                 Home
-                            </h5>
-                            <h5>/ {subjects.code} ↔ {subjects.name} </h5>
+                            </h5><h5>/</h5>
+                            <h5 style={{margin: '0px 10px'}}> {subjects.code} ↔ {subjects.name} </h5>
                         </Col>
                     </Row>
 
@@ -166,7 +166,7 @@ function CourseDetail() {
                                                                 {
                                                                     questions.filter((question) => question.slotID == slot.id).map((question) => (
                                                                         <tr key={question.id}>
-                                                                             <td><a href={`/question/${question.id}`}><FaQuestionCircle /> {question.title}</a></td>
+                                                                             <td><a href={`/question/${question.id}/${subjects.id}`}><FaQuestionCircle /> {question.title}</a></td>
                                                                             <td>
                                                                                 <span className="text-danger">Custom</span>
                                                                                 <span style={{ marginLeft: '20px', border: '1px solid black', backgroundColor: '#skyblue', border: 'none' }} className="text-primary">On-going</span>

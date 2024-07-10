@@ -101,7 +101,7 @@ function Assignment() {
                     <Row className='mt-3'>
                         <Col style={{ display: 'flex' }}>
                             <h5
-                                style={{ textDecoration: 'underline', color: '#297FFD', cursor: 'pointer', marginRight: '10px' }}
+                                style={{ color: '#297FFD', cursor: 'pointer', marginRight: '10px' }}
                                 onClick={() => navigate('/')}
                             >
                                 Home
