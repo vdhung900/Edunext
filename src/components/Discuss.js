@@ -1,8 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Avatar, Box, Button, Paper, TextField, Typography, IconButton, Menu, MenuItem, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, CircularProgress } from '@mui/material';
+import {
+    Avatar, Box, Button, Paper, TextField, Typography,
+    IconButton, Menu, MenuItem, CircularProgress
+} from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { AuthContext } from '../context/AuthContext';
+import StarIcon from '@mui/icons-material/Star';
 
 const TextBox = ({ onSend }) => {
     const [answerContent, setAnswerContent] = useState('');
@@ -74,7 +77,6 @@ const Discuss = ({ answers, setAnswers, userId, questionId, formatTimestamp }) =
     const [menuAnchorEl, setMenuAnchorEl] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-
     const handleSendAnswer = async (content) => {
         try {
             const newAnswer = {
@@ -93,7 +95,11 @@ const Discuss = ({ answers, setAnswers, userId, questionId, formatTimestamp }) =
 
     const handleEditAnswer = async (answerId, newContent) => {
         try {
-            await axios.put(`http://localhost:9999/answers/${answerId}`, { ...selectedAnswer,content: newContent, timestamp: formatTimestamp(new Date()) });
+            await axios.put(`http://localhost:9999/answers/${answerId}`, {
+                ...selectedAnswer,
+                content: newContent,
+                timestamp: formatTimestamp(new Date()),
+            });
             alert('Answer updated successfully');
             setAnswers(answers.map(answer => (answer.id === answerId ? { ...answer, content: newContent } : answer)));
         } catch (error) {
@@ -103,16 +109,27 @@ const Discuss = ({ answers, setAnswers, userId, questionId, formatTimestamp }) =
 
     const handleDeleteAnswer = async (answerId) => {
         const confirmDelete = window.confirm("Are you sure?");
-    if (confirmDelete) {
+        if (confirmDelete) {
+            try {
+                await axios.delete(`http://localhost:9999/answers/${answerId}`);
+                alert('Answer deleted successfully');
+                setAnswers(answers.filter(answer => answer.id !== answerId));
+                handleMenuClose();
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    };
+
+    const handleVote = async (answerId) => {
         try {
-            await axios.delete(`http://localhost:9999/answers/${answerId}`);
-            alert('Answer deleted successfully');
-            setAnswers(answers.filter(answer => answer.id !== answerId));
-            handleMenuClose();
+            const answer = answers.find(answer => answer.id === answerId);
+            const updatedAnswer = { ...answer, vote: answer.vote + 1 };
+            await axios.put(`http://localhost:9999/answers/${answerId}`, updatedAnswer);
+            setAnswers(answers.map(answer => (answer.id === answerId ? updatedAnswer : answer)));
         } catch (error) {
             console.error(error);
         }
-    }
     };
 
     const handleMenuOpen = (event, answer) => {
@@ -182,8 +199,17 @@ const Discuss = ({ answers, setAnswers, userId, questionId, formatTimestamp }) =
                             {answer.content}
                         </Typography>
                     )}
-                    <Box>
-                        <Button size="small">Vote</Button>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        {answer.userID !== userId && (
+                            <Button size="small" onClick={() => handleVote(answer.id)}>Vote</Button>
+                        )}
+                        {answer.userID === userId && (
+                            <Button size="small"></Button>
+                        )}
+                        <Box sx={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
+                            <StarIcon sx={{ marginRight: '5px', color: '#FFCC00' }} />
+                            <Typography variant="body2">{answer.vote}</Typography>
+                        </Box>
                     </Box>
                 </Paper>
             ))}

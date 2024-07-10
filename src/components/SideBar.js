@@ -52,7 +52,7 @@ const SideBar = ({ isSidebarOpen, toggleSidebar }) => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className='d-flex mt-3'>
-          <Nav.Link href="#" style={{ color: 'black' }}>
+          <Nav.Link href="/assignment" style={{ color: 'black' }}>
             <FaBook />
             {isSidebarOpen && ' Assignments'}
           </Nav.Link>

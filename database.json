@@ -1284,7 +1284,7 @@
       "id": 1,
       "userID": 5,
       "questionID": 1,
-      "vote": 10,
+      "vote": 12,
       "subjectCode": "FER202",
       "content": "React handles state using component state (useState) and context (useContext). Component state allows individual components to manage their own state, while context provides a way to share state across components.",
       "timestamp": "07/07/24 08:20:42"
@@ -1293,7 +1293,7 @@
       "id": 2,
       "userID": 7,
       "questionID": 1,
-      "vote": 15,
+      "vote": 16,
       "subjectCode": "FER202",
       "content": "React handles state using component state (useState) and context (useContext). Component state allows individual components to manage their own state, while context provides a way to share state across components.",
       "timestamp": "09/07/24 14:40:19"
@@ -1365,7 +1365,7 @@
       "id": 10,
       "userID": 8,
       "questionID": 1,
-      "vote": 17,
+      "vote": 20,
       "subjectCode": "FER202",
       "content": "In React, consider using the useEffect hook for handling side effects and managing component lifecycle.",
       "timestamp": "09/07/24 18:30:27"
@@ -1428,7 +1428,7 @@
       "id": 17,
       "userID": 10,
       "questionID": 1,
-      "vote": 7,
+      "vote": 8,
       "subjectCode": "FER202",
       "content": "React's component lifecycle methods, such as componentDidMount and componentDidUpdate, allow you to manage side effects and state updates.",
       "timestamp": "09/07/24 10:05:14"
@@ -1463,7 +1463,7 @@
     {
       "userID": 1,
       "questionID": 1,
-      "vote": 0,
+      "vote": 4,
       "content": "123",
       "timestamp": "09/07/2024 22:24:24",
       "id": 21
