@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Container, Row, Col, Nav, Card, Button, Form } from 'react-bootstrap';
 import { FaHome, FaBook, FaCalendar, FaHeadset, FaQuestion, FaUserCircle, FaFilePdf, FaChalkboardTeacher, FaUsers } from 'react-icons/fa';
 import { AuthContext } from '../context/AuthContext'; // Assuming this is the correct path to your AuthContext
-import SideBar from './SideBar';
+import SideBar from '../components/SideBar';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
@@ -16,9 +16,9 @@ function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const navigate = useNavigate();
 
-    if(!userId){
-        navigate('/login');
-    }
+  if (!userId) {
+    navigate('/login');
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +27,7 @@ function Home() {
         const subjectsResponse = await axios.get('http://localhost:9999/subjects');
         const semestersResponse = await axios.get('http://localhost:9999/semesters');
         const enrollmentsResponse = await axios.get('http://localhost:9999/enrollment');
-        
+
         setClasses(classesResponse.data);
         setSubjects(subjectsResponse.data);
         setSemesters(semestersResponse.data);
@@ -48,7 +48,7 @@ function Home() {
     return enrollments.filter(enroll => enroll.classID === classID).length;
   };
 
-  const filteredSubjects = selectedSemesterId 
+  const filteredSubjects = selectedSemesterId
     ? subjects.filter(subject => subject.semesterID == selectedSemesterId)
     : subjects;
 
@@ -56,7 +56,7 @@ function Home() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  
+
   return (
     <Container fluid>
       <Row>
@@ -79,8 +79,8 @@ function Home() {
               SEMESTER:
             </Form.Label>
             <Col sm={4}>
-              <Form.Control 
-                as="select" 
+              <Form.Control
+                as="select"
                 id="semester"
                 onChange={(e) => handleSelected(parseInt(e.target.value))}
               >
@@ -93,26 +93,26 @@ function Home() {
           </Form.Group>
 
           <Row>
-            <p style={{color: '#297FFD', cursor: 'pointer'}}>Recently Updated (Để xem chi tiết về các thay đổi cập nhật gần đây, vui lòng nhấp vào đây)</p>
+            <p style={{ color: '#297FFD', cursor: 'pointer' }}>Recently Updated (Để xem chi tiết về các thay đổi cập nhật gần đây, vui lòng nhấp vào đây)</p>
             {filteredSubjects.map((subject) => (
               <Col key={subject.id} md={4} className="mb-4">
                 <Card className="h-100 d-flex flex-column justify-content-between">
                   <Card.Body>
-                    <Card.Title className='d-flex' style={{height: '50px'}}>{subject.name}</Card.Title>
+                    <Card.Title className='d-flex' style={{ height: '50px' }}>{subject.name}</Card.Title>
                     <Card.Text>
                       {classes.map((classItem) => {
-                          if (classItem.subjectID == subject.id){
-                              return (
-                                <Card.Text key={classItem.id} className='d-flex mt-3'>
-                                  <FaChalkboardTeacher style={{color: 'lightgrey', marginRight: '5px', marginTop: '5px'}}/>
-                                  {classItem.className} - {subject.code}
-                                </Card.Text>
-                              );
-                          }
+                        if (classItem.subjectID == subject.id) {
+                          return (
+                            <Card.Text key={classItem.id} className='d-flex mt-3'>
+                              <FaChalkboardTeacher style={{ color: 'lightgrey', marginRight: '5px', marginTop: '5px' }} />
+                              {classItem.className} - {subject.code}
+                            </Card.Text>
+                          );
+                        }
                       })}
                     </Card.Text>
-                    <Card.Text><FaUserCircle style={{color: 'lightgrey'}}/> edu_next_ltr_fpt_edu_02</Card.Text>
-                    <Card.Text><FaUsers style={{color: 'lightgrey'}}/> Number of students: {countEnrollments(subject.id)}</Card.Text>
+                    <Card.Text><FaUserCircle style={{ color: 'lightgrey' }} /> edu_next_ltr_fpt_edu_02</Card.Text>
+                    <Card.Text><FaUsers style={{ color: 'lightgrey' }} /> Number of students: {countEnrollments(subject.id)}</Card.Text>
                   </Card.Body>
                   <Card.Footer className="d-flex justify-content-between">
                     <Button variant="primary" onClick={() => navigate(`/course/${subject.id}`)}>

@@ -4,7 +4,7 @@ import { Button, Col, Container, DropdownButton, Dropdown, Row, Table, Accordion
 import { FaCommentDots, FaQuestionCircle } from 'react-icons/fa';
 
 import { useNavigate, useParams } from 'react-router-dom';
-import SideBar from './SideBar';
+import SideBar from '../components/SideBar';
 import { AuthContext } from '../context/AuthContext';
 
 function CourseDetail() {
