@@ -74,6 +74,7 @@ const Discuss = ({ answers, setAnswers, userId, questionId, formatTimestamp }) =
     const [menuAnchorEl, setMenuAnchorEl] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
 
+
     const handleSendAnswer = async (content) => {
         try {
             const newAnswer = {
@@ -92,7 +93,7 @@ const Discuss = ({ answers, setAnswers, userId, questionId, formatTimestamp }) =
 
     const handleEditAnswer = async (answerId, newContent) => {
         try {
-            await axios.put(`http://localhost:9999/answers/${answerId}`, { ...selectedAnswer,content: newContent });
+            await axios.put(`http://localhost:9999/answers/${answerId}`, { ...selectedAnswer,content: newContent, timestamp: formatTimestamp(new Date()) });
             alert('Answer updated successfully');
             setAnswers(answers.map(answer => (answer.id === answerId ? { ...answer, content: newContent } : answer)));
         } catch (error) {
