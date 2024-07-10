@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import axios from 'axios';
 import SideBar from '../components/SideBar';
 import '../components/styles.css';
 import { AuthContext } from '../context/AuthContext';
+import AssignmentSubmit from '../components/AssignmentSubmit';
 
 function Assignment() {
     const { id } = useParams();
@@ -13,13 +14,35 @@ function Assignment() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const { userId } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [showSubmitModal, setShowSubmitModal] = useState(false);
+    const [hasSubmission, setHasSubmission] = useState(false); // State to track if there is a submission
 
     if (!userId) {
         navigate('/login');
     }
 
+    // Function to format date
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const day = date.getDate().toString().padStart(2, '0'); // Ensure two digits
+        const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Ensure two digits
+        const year = date.getFullYear();
+        const hours = date.getHours().toString().padStart(2, '0'); // Ensure two digits
+        const minutes = date.getMinutes().toString().padStart(2, '0'); // Ensure two digits
+        const seconds = date.getSeconds().toString().padStart(2, '0'); // Ensure two digits
+        return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+    };
+
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    const handleOpenSubmitModal = () => {
+        setShowSubmitModal(true);
+    };
+
+    const handleCloseSubmitModal = () => {
+        setShowSubmitModal(false);
     };
 
     useEffect(() => {
@@ -28,10 +51,17 @@ function Assignment() {
                 const assResponse = await axios.get(`http://localhost:9999/assignments/${id}`);
                 setAssignment(assResponse.data);
 
-                const submissionsResponse = await axios.get('http://localhost:9000/submissions');
+                const submissionsResponse = await axios.get('http://localhost:9999/submissions');
                 const subuser = submissionsResponse.data.filter(submissions => submissions.userID == userId);
                 const subassign = subuser.filter(submissions => submissions.assignmentID == id);
                 setSubmissions(subassign);
+
+                // Check if there is a submission
+                if (subassign.length > 0) {
+                    setHasSubmission(true);
+                } else {
+                    setHasSubmission(false);
+                }
             } catch (error) {
                 console.error(error);
             }
@@ -52,6 +82,7 @@ function Assignment() {
 
         const submissionDate = new Date(submissions[0].date);
         const assignmentDate = new Date(assignment.date);
+        console.log(submissionDate, assignmentDate);
 
         if (submissionDate <= assignmentDate) {
             return "Done";
@@ -94,7 +125,7 @@ function Assignment() {
                                     <b>ADDITIONAL FILES:</b> <button className="btn btn-success" onClick={handleGetAssignment}>GET ASSIGNMENT</button>
                                 </p>
                                 <p>
-                                    <b>DUE DATE:</b> {assignment.date} {assignment.time} - <b>SCORE:</b> <span className="red-score">{submissions.length > 0 ? submissions[0].score : 0}</span>
+                                    <b>DUE DATE:</b> {formatDate(assignment.date)} - <b>SCORE:</b> <span className="red-score">{submissions.length > 0 ? submissions[0].score : 0}</span>
                                 </p>
                             </div>
                         </div>
@@ -108,25 +139,34 @@ function Assignment() {
                             <div className="submission-tile">
                                 <h5>SUBMISSION TIME</h5>
                                 <br></br>
-                                <p>{submissions.length > 0 ? new Date(submissions[0].date).toLocaleString() : '-'}</p>
+                                <p>{submissions.length > 0 ? formatDate(submissions[0].date) : '-'}</p>
                             </div>
                             <div className="submission-tile">
                                 <h5>LINK/FILE ASSIGNMENT</h5>
                                 <br></br>
                                 {submissions.length > 0 &&
                                     <p>
-                                        {submissions[0].submitted.startsWith('data:') ? (
-                                            <a href={submissions[0].submitted} download>GET MY FILE</a>
-                                        ) : (
-                                            <a href={submissions[0].submitted} target="_blank" rel="noopener noreferrer">GET MY FILE</a>
-                                        )}
+                                        <a href={submissions[0].submitted} download>GET MY FILE</a>
                                     </p>
                                 }
                             </div>
                         </div>
+                        <br></br>
+                        <div className="submission-button">
+                            <Button variant="primary" onClick={handleOpenSubmitModal}>Submit</Button>
+                        </div>
                     </div>
                 </Col>
             </Row>
+            <AssignmentSubmit
+                show={showSubmitModal}
+                handleClose={handleCloseSubmitModal}
+                assignmentDate={assignment.date}
+                assignmentID={assignment.id}
+                submissionId={submissions.length > 0 ? submissions[0].id : null}
+                uId={userId}
+                hasSubmission={hasSubmission}
+            />
         </Container>
     );
 }
