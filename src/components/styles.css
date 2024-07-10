@@ -91,3 +91,20 @@ body, html {
   .login-container {
     display: block;
   }
+
+.red-score {
+  color: red;
+}
+
+.submission-tiles {
+  display: flex;
+  gap: 20px;
+  /* Adjust as needed */
+}
+
+.submission-tile {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

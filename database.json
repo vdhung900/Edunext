@@ -513,210 +513,210 @@
       "slotName": "Introduction to React",
       "detail": "Overview of React concepts",
       "classID": 1,
-      "timestamp": "09/07/24 15:20:10"
+      "timestamp": "09/07/2024 15:20:10"
     },
     {
       "id": 2,
       "slotName": "Hiragana Practice",
       "detail": "Practice recognizing and writing hiragana characters",
       "classID": 2,
-      "timestamp": "08/07/24 10:45:28"
+      "timestamp": "08/07/2024 10:45:28"
     },
     {
       "id": 3,
       "slotName": "Hiragana Practice",
       "detail": "Practice recognizing and writing hiragana characters",
       "classID": 3,
-      "timestamp": "07/07/24 18:12:15"
+      "timestamp": "07/07/2024 18:12:15"
     },
     {
       "id": 4,
       "slotName": "Sorting Algorithms Comparison",
       "detail": "Comparison of various sorting algorithms",
       "classID": 4,
-      "timestamp": "05/07/24 21:05:59"
+      "timestamp": "05/07/2024 21:05:59"
     },
     {
       "id": 5,
       "slotName": "Web Application Architecture",
       "detail": "High-level architecture design for web-based Java applications",
       "classID": 5,
-      "timestamp": "06/07/24 16:30:45"
+      "timestamp": "06/07/2024 16:30:45"
     },
     {
       "id": 6,
       "slotName": "Graph Algorithms",
       "detail": "Study and apply graph algorithms",
       "classID": 6,
-      "timestamp": "04/07/24 09:55:36"
+      "timestamp": "04/07/2024 09:55:36"
     },
     {
       "id": 7,
       "slotName": "Front-End React",
       "detail": "In-depth exploration of React for web development",
       "classID": 1,
-      "timestamp": "2024-07-09 10:00:00"
+      "timestamp": "09/07/2024 10:00:00"
     },
     {
       "id": 8,
       "slotName": "React Components",
       "detail": "Hands-on React projects and component design",
       "classID": 1,
-      "timestamp": "2024-07-08 14:30:00"
+      "timestamp": "08/07/2024 14:30:00"
     },
     {
       "id": 9,
       "slotName": "React State Management",
       "detail": "State management and Redux integration",
       "classID": 1,
-      "timestamp": "2024-07-07 11:45:00"
+      "timestamp": "07/07/2024 11:45:00"
     },
     {
       "id": 10,
       "slotName": "React Hooks",
       "detail": "React Hooks and functional components",
       "classID": 1,
-      "timestamp": "2024-07-06 16:20:00"
+      "timestamp": "06/07/2024 16:20:00"
     },
     {
       "id": 11,
       "slotName": "Japanese Basics",
       "detail": "Basic greetings and introductions in Japanese",
       "classID": 2,
-      "timestamp": "2024-07-05 13:10:00"
+      "timestamp": "05/07/2024 13:10:00"
     },
     {
       "id": 12,
       "slotName": "Hiragana and Katakana",
       "detail": "Introduction to hiragana and katakana",
       "classID": 2,
-      "timestamp": "2024-07-04 10:45:00"
+      "timestamp": "04/07/2024 10:45:00"
     },
     {
       "id": 13,
       "slotName": "Japanese Numbers",
       "detail": "Numbers and counting in Japanese",
       "classID": 2,
-      "timestamp": "2024-07-03 14:20:00"
+      "timestamp": "03/07/2024 14:20:00"
     },
     {
       "id": 14,
       "slotName": "Daily Japanese",
       "detail": "Daily life vocabulary and phrases",
       "classID": 2,
-      "timestamp": "2024-07-02 09:30:00"
+      "timestamp": "02/07/2024 09:30:00"
     },
     {
       "id": 15,
       "slotName": "Elementary Japanese Grammar",
       "detail": "Grammar fundamentals and sentence structure",
       "classID": 3,
-      "timestamp": "2024-07-01 17:15:00"
+      "timestamp": "01/07/2024 17:15:00"
     },
     {
       "id": 16,
       "slotName": "Japanese Reading Practice",
       "detail": "Reading and comprehension exercises",
       "classID": 3,
-      "timestamp": "2024-06-30 11:00:00"
+      "timestamp": "30/06/2024 11:00:00"
     },
     {
       "id": 17,
       "slotName": "Japanese Culture",
       "detail": "Cultural insights and customs in Japan",
       "classID": 3,
-      "timestamp": "2024-06-29 15:45:00"
+      "timestamp": "29/06/2024 15:45:00"
     },
     {
       "id": 18,
       "slotName": "Japanese Writing",
       "detail": "Writing practice and kanji characters",
       "classID": 3,
-      "timestamp": "2024-06-28 12:30:00"
+      "timestamp": "28/06/2024 12:30:00"
     },
     {
       "id": 19,
       "slotName": "OOP Principles",
       "detail": "Principles of encapsulation and inheritance",
       "classID": 4,
-      "timestamp": "2024-06-27 09:20:00"
+      "timestamp": "27/06/2024 09:20:00"
     },
     {
       "id": 20,
       "slotName": "Polymorphism in Java",
       "detail": "Polymorphism and dynamic binding in Java",
       "classID": 4,
-      "timestamp": "2024-06-26 14:10:00"
+      "timestamp": "26/06/2024 14:10:00"
     },
     {
       "id": 21,
       "slotName": "Design Patterns in OOP",
       "detail": "Design patterns and best practices",
       "classID": 4,
-      "timestamp": "2024-06-25 11:00:00"
+      "timestamp": "25/06/2024 11:00:00"
     },
     {
       "id": 22,
       "slotName": "Software Architecture",
       "detail": "Software architecture and UML diagrams",
       "classID": 4,
-      "timestamp": "2024-06-24 16:30:00"
+      "timestamp": "24/06/2024 16:30:00"
     },
     {
       "id": 23,
       "slotName": "Java Servlets",
       "detail": "Server-side programming with Java Servlets",
       "classID": 5,
-      "timestamp": "2024-06-23 13:45:00"
+      "timestamp": "23/06/2024 13:45:00"
     },
     {
       "id": 24,
       "slotName": "JDBC Integration",
       "detail": "Database connectivity and JDBC integration",
       "classID": 5,
-      "timestamp": "2024-06-22 10:15:00"
+      "timestamp": "22/06/2024 10:15:00"
     },
     {
       "id": 25,
       "slotName": "Web Security",
       "detail": "Web security and HTTPS protocols",
       "classID": 5,
-      "timestamp": "2024-06-21 15:20:00"
+      "timestamp": "21/06/2024 15:20:00"
     },
     {
       "id": 26,
       "slotName": "RESTful APIs",
       "detail": "RESTful API design and implementation",
       "classID": 5,
-      "timestamp": "2024-06-20 09:30:00"
+      "timestamp": "20/06/2024 09:30:00"
     },
     {
       "id": 27,
       "slotName": "Array Manipulation",
       "detail": "Array manipulation and searching algorithms",
       "classID": 6,
-      "timestamp": "2024-06-19 16:40:00"
+      "timestamp": "19/06/2024 16:40:00"
     },
     {
       "id": 28,
       "slotName": "Linked Lists",
       "detail": "Linked list operations and complexity analysis",
       "classID": 6,
-      "timestamp": "2024-06-18 11:55:00"
+      "timestamp": "18/06/2024 11:55:00"
     },
     {
       "id": 29,
       "slotName": "Binary Search Trees",
       "detail": "Binary search trees and traversal techniques",
       "classID": 6,
-      "timestamp": "2024-06-17 14:25:00"
+      "timestamp": "17/06/2024 14:25:00"
     },
     {
       "id": 30,
       "slotName": "Graph Representation",
       "detail": "Graph representation and shortest path algorithms",
       "classID": 6,
-      "timestamp": "2024-06-16 10:00:00"
+      "timestamp": "16/06/2024 10:00:00"
     }
   ],
   "assignments": [
@@ -724,81 +724,101 @@
       "id": 1,
       "subjectCode": "FER202",
       "slotID": 1,
-      "content": "Complete React project",
-      "date": "2024-06-24",
-      "classID": 1
+      "title": "Complete React project",
+      "content": "Finish the React project with Redux integration",
+      "date": "06/24/2024 14:30:00",
+      "classID": 1,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 2,
       "subjectCode": "FER202",
       "slotID": 1,
-      "content": "Write unit tests for components",
-      "date": "2024-06-25",
-      "classID": 1
+      "title": "Write unit tests for components",
+      "content": "Implement unit tests for React components using Jest",
+      "date": "06/25/2024 16:45:00",
+      "classID": 1,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 3,
       "subjectCode": "JPD123",
       "slotID": 3,
-      "content": "Kanji Practice",
-      "date": "2024-06-26",
-      "classID": 3
+      "title": "Kanji Practice",
+      "content": "Practice writing and reading Kanji characters",
+      "date": "06/26/2024 12:00:00",
+      "classID": 3,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 4,
       "subjectCode": "JPD123",
       "slotID": 3,
-      "content": "Japanese Culture Presentation",
-      "date": "2024-06-27",
-      "classID": 3
+      "title": "Japanese Culture Presentation",
+      "content": "Prepare and deliver a presentation on Japanese culture",
+      "date": "06/27/2024 18:20:00",
+      "classID": 3,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 5,
       "subjectCode": "PRO192",
       "slotID": 4,
-      "content": "Design a web-based Java application",
-      "date": "2024-06-28",
-      "classID": 4
+      "title": "Design a web-based Java application",
+      "content": "Design and prototype a Java web application using Spring Boot",
+      "date": "06/28/2024 15:10:00",
+      "classID": 4,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 6,
       "subjectCode": "PRJ301",
       "slotID": 5,
-      "content": "Implement user authentication",
-      "date": "2024-06-29",
-      "classID": 5
+      "title": "Implement user authentication",
+      "content": "Implement user authentication using OAuth 2.0",
+      "date": "06/29/2024 19:00:00",
+      "classID": 5,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 7,
       "subjectCode": "JPD113",
       "slotID": 2,
-      "content": "Hiragana Practice",
-      "date": "2024-06-30",
-      "classID": 2
+      "title": "Hiragana Practice",
+      "content": "Practice writing and reading Hiragana characters",
+      "date": "06/30/2024 16:40:00",
+      "classID": 2,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 8,
       "subjectCode": "JPD113",
       "slotID": 2,
-      "content": "Introduction to Kanji",
-      "date": "2024-07-01",
-      "classID": 2
+      "title": "Introduction to Kanji",
+      "content": "Learn basic Kanji characters and their meanings",
+      "date": "07/01/2024 14:15:00",
+      "classID": 2,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 9,
       "subjectCode": "CSD201",
       "slotID": 6,
-      "content": "Sorting Algorithms Comparison",
-      "date": "2024-07-02",
-      "classID": 6
+      "title": "Sorting Algorithms Comparison",
+      "content": "Compare various sorting algorithms based on efficiency and performance",
+      "date": "07/02/2024 17:30:00",
+      "classID": 6,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 10,
       "subjectCode": "CSD201",
       "slotID": 6,
-      "content": "Graph Algorithms",
-      "date": "2024-07-03",
-      "classID": 6
+      "title": "Graph Algorithms",
+      "content": "Implement and analyze graph algorithms such as Dijkstra's and BFS",
+      "date": "07/03/2024 13:50:00",
+      "classID": 6,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     }
   ],
   "questions": [
@@ -1284,19 +1304,19 @@
       "id": 1,
       "userID": 5,
       "questionID": 1,
-      "vote": 12,
+      "vote": 10,
       "subjectCode": "FER202",
       "content": "React handles state using component state (useState) and context (useContext). Component state allows individual components to manage their own state, while context provides a way to share state across components.",
-      "timestamp": "07/07/24 08:20:42"
+      "timestamp": "07/07/2024 08:20:42"
     },
     {
       "id": 2,
       "userID": 7,
       "questionID": 1,
-      "vote": 16,
+      "vote": 15,
       "subjectCode": "FER202",
       "content": "React handles state using component state (useState) and context (useContext). Component state allows individual components to manage their own state, while context provides a way to share state across components.",
-      "timestamp": "09/07/24 14:40:19"
+      "timestamp": "09/07/2024 14:40:19"
     },
     {
       "id": 3,
@@ -1305,7 +1325,7 @@
       "vote": 8,
       "subjectCode": "FER202",
       "content": "Redux is not necessary for all React projects, but it can be beneficial for managing global state and complex data flows.",
-      "timestamp": "08/07/24 12:18:37"
+      "timestamp": "08/07/2024 12:18:37"
     },
     {
       "id": 4,
@@ -1314,7 +1334,7 @@
       "vote": 12,
       "subjectCode": "JPD113",
       "content": "When writing hiragana characters, practice stroke order and pay attention to subtle differences between similar characters.",
-      "timestamp": "06/07/24 07:03:55"
+      "timestamp": "06/07/2024 07:03:55"
     },
     {
       "id": 5,
@@ -1323,7 +1343,7 @@
       "vote": 18,
       "subjectCode": "JPD123",
       "content": "Japanese culture has a rich history, beautiful traditions, and delicious food. Explore tea ceremonies, cherry blossoms, and sushi!",
-      "timestamp": "05/07/24 19:28:24"
+      "timestamp": "05/07/2024 19:28:24"
     },
     {
       "id": 6,
@@ -1332,7 +1352,7 @@
       "vote": 5,
       "subjectCode": "PRO192",
       "content": "In Java applications, the Singleton design pattern is often useful for ensuring a single instance of a class.",
-      "timestamp": "04/07/24 22:50:13"
+      "timestamp": "04/07/2024 22:50:13"
     },
     {
       "id": 7,
@@ -1341,7 +1361,7 @@
       "vote": 14,
       "subjectCode": "CSD201",
       "content": "Graph algorithms involve traversing and analyzing graphs. Consider depth-first search (DFS) and breadth-first search (BFS).",
-      "timestamp": "03/07/24 11:15:08"
+      "timestamp": "03/07/2024 11:15:08"
     },
     {
       "id": 8,
@@ -1350,7 +1370,7 @@
       "vote": 20,
       "subjectCode": "PRJ301",
       "content": "HTTP status codes indicate the outcome of an HTTP request. For example, 200-299 range signifies success, while 400-499 indicates client errors.",
-      "timestamp": "02/07/24 13:58:19"
+      "timestamp": "02/07/2024 13:58:19"
     },
     {
       "id": 9,
@@ -1359,16 +1379,16 @@
       "vote": 3,
       "subjectCode": "PRJ301",
       "content": "To send a GIF image as an HTTP response, set the appropriate content type (image/gif) and write the image data in the response body.",
-      "timestamp": "01/07/24 07:42:55"
+      "timestamp": "01/07/2024 07:42:55"
     },
     {
       "id": 10,
       "userID": 8,
       "questionID": 1,
-      "vote": 20,
+      "vote": 17,
       "subjectCode": "FER202",
       "content": "In React, consider using the useEffect hook for handling side effects and managing component lifecycle.",
-      "timestamp": "09/07/24 18:30:27"
+      "timestamp": "09/07/2024 18:30:27"
     },
     {
       "id": 11,
@@ -1377,7 +1397,7 @@
       "vote": 6,
       "subjectCode": "FER202",
       "content": "Redux simplifies state management by centralizing it in a global store. It's especially useful for large-scale applications.",
-      "timestamp": "08/07/24 09:55:46"
+      "timestamp": "08/07/2024 09:55:46"
     },
     {
       "id": 12,
@@ -1386,7 +1406,7 @@
       "vote": 9,
       "subjectCode": "JPD113",
       "content": "Practice writing hiragana characters repeatedly to improve muscle memory and fluency.",
-      "timestamp": "06/07/24 15:20:33"
+      "timestamp": "06/07/2024 15:20:33"
     },
     {
       "id": 13,
@@ -1395,7 +1415,7 @@
       "vote": 13,
       "subjectCode": "JPD123",
       "content": "Japanese art, including ukiyo-e prints and calligraphy, reflects the country's rich cultural heritage.",
-      "timestamp": "05/07/24 12:40:18"
+      "timestamp": "05/07/2024 12:40:18"
     },
     {
       "id": 14,
@@ -1404,7 +1424,7 @@
       "vote": 4,
       "subjectCode": "PRO192",
       "content": "The Observer pattern is valuable for maintaining consistency between related objects in Java applications.",
-      "timestamp": "04/07/24 17:10:09"
+      "timestamp": "04/07/2024 17:10:09"
     },
     {
       "id": 15,
@@ -1413,7 +1433,7 @@
       "vote": 11,
       "subjectCode": "CSD201",
       "content": "Graph algorithms like Dijkstra's shortest path algorithm are essential for solving network-related problems.",
-      "timestamp": "03/07/24 08:45:59"
+      "timestamp": "03/07/2024 08:45:59"
     },
     {
       "id": 16,
@@ -1422,16 +1442,16 @@
       "vote": 19,
       "subjectCode": "PRJ301",
       "content": "HTTP status codes provide crucial information for debugging and handling different scenarios in web development.",
-      "timestamp": "02/07/24 19:55:21"
+      "timestamp": "02/07/2024 19:55:21"
     },
     {
       "id": 17,
       "userID": 10,
       "questionID": 1,
-      "vote": 8,
+      "vote": 7,
       "subjectCode": "FER202",
       "content": "React's component lifecycle methods, such as componentDidMount and componentDidUpdate, allow you to manage side effects and state updates.",
-      "timestamp": "09/07/24 10:05:14"
+      "timestamp": "09/07/2024 10:05:14"
     },
     {
       "id": 18,
@@ -1440,7 +1460,7 @@
       "vote": 16,
       "subjectCode": "FER202",
       "content": "Redux middleware, like thunk or saga, enables handling asynchronous actions and side effects in a predictable way.",
-      "timestamp": "08/07/24 21:30:25"
+      "timestamp": "08/07/2024 21:30:25"
     },
     {
       "id": 19,
@@ -1449,7 +1469,7 @@
       "vote": 10,
       "subjectCode": "JPD113",
       "content": "Learn mnemonic devices or associations to remember hiragana characters more effectively.",
-      "timestamp": "06/07/24 10:15:47"
+      "timestamp": "06/07/2024 10:15:47"
     },
     {
       "id": 20,
@@ -1458,15 +1478,7 @@
       "vote": 14,
       "subjectCode": "JPD123",
       "content": "Japanese calligraphy (shodo) combines artistry and discipline. Explore its beauty and learn basic strokes.",
-      "timestamp": "05/07/24 08:20:36"
-    },
-    {
-      "userID": 1,
-      "questionID": 1,
-      "vote": 4,
-      "content": "123",
-      "timestamp": "09/07/2024 22:24:24",
-      "id": 21
+      "timestamp": "05/07/2024 08:20:36"
     }
   ],
   "Group": [
@@ -1551,6 +1563,26 @@
     {
       "userID": 18,
       "groupID": 5
+    }
+  ],
+  "submissions": [
+    {
+      "id": "1",
+      "assignmentID": 1,
+      "submitted": "https://paste.myself5.de/nimicujifa.kotlin",
+      "description": "",
+      "date": "06/09/2024 15:00:00",
+      "userID": 5,
+      "score": 7
+    },
+    {
+      "id": "2",
+      "assignmentID": 2,
+      "submitted": "https://paste.myself5.de/nimicujifa.kotlin",
+      "description": "",
+      "date": "06/09/2024 15:00:00",
+      "userID": 5,
+      "score": 7
     }
   ]
 }
