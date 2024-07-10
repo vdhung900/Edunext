@@ -724,81 +724,111 @@
       "id": 1,
       "subjectCode": "FER202",
       "slotID": 1,
-      "content": "Complete React project",
+      "title": "Complete React project",
+      "content": "Finish the React project with Redux integration",
       "date": "2024-06-24",
-      "classID": 1
+      "time": "14:30:00",
+      "classID": 1,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 2,
       "subjectCode": "FER202",
       "slotID": 1,
-      "content": "Write unit tests for components",
+      "title": "Write unit tests for components",
+      "content": "Implement unit tests for React components using Jest",
       "date": "2024-06-25",
-      "classID": 1
+      "time": "16:45:00",
+      "classID": 1,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 3,
       "subjectCode": "JPD123",
       "slotID": 3,
-      "content": "Kanji Practice",
+      "title": "Kanji Practice",
+      "content": "Practice writing and reading Kanji characters",
       "date": "2024-06-26",
-      "classID": 3
+      "time": "12:00:00",
+      "classID": 3,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 4,
       "subjectCode": "JPD123",
       "slotID": 3,
-      "content": "Japanese Culture Presentation",
+      "title": "Japanese Culture Presentation",
+      "content": "Prepare and deliver a presentation on Japanese culture",
       "date": "2024-06-27",
-      "classID": 3
+      "time": "18:20:00",
+      "classID": 3,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 5,
       "subjectCode": "PRO192",
       "slotID": 4,
-      "content": "Design a web-based Java application",
+      "title": "Design a web-based Java application",
+      "content": "Design and prototype a Java web application using Spring Boot",
       "date": "2024-06-28",
-      "classID": 4
+      "time": "15:10:00",
+      "classID": 4,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 6,
       "subjectCode": "PRJ301",
       "slotID": 5,
-      "content": "Implement user authentication",
+      "title": "Implement user authentication",
+      "content": "Implement user authentication using OAuth 2.0",
       "date": "2024-06-29",
-      "classID": 5
+      "time": "19:00:00",
+      "classID": 5,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 7,
       "subjectCode": "JPD113",
       "slotID": 2,
-      "content": "Hiragana Practice",
+      "title": "Hiragana Practice",
+      "content": "Practice writing and reading Hiragana characters",
       "date": "2024-06-30",
-      "classID": 2
+      "time": "16:40:00",
+      "classID": 2,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 8,
       "subjectCode": "JPD113",
       "slotID": 2,
-      "content": "Introduction to Kanji",
+      "title": "Introduction to Kanji",
+      "content": "Learn basic Kanji characters and their meanings",
       "date": "2024-07-01",
-      "classID": 2
+      "time": "14:15:00",
+      "classID": 2,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 9,
       "subjectCode": "CSD201",
       "slotID": 6,
-      "content": "Sorting Algorithms Comparison",
+      "title": "Sorting Algorithms Comparison",
+      "content": "Compare various sorting algorithms based on efficiency and performance",
       "date": "2024-07-02",
-      "classID": 6
+      "time": "17:30:00",
+      "classID": 6,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
       "id": 10,
       "subjectCode": "CSD201",
       "slotID": 6,
-      "content": "Graph Algorithms",
+      "title": "Graph Algorithms",
+      "content": "Implement and analyze graph algorithms such as Dijkstra's and BFS",
       "date": "2024-07-03",
-      "classID": 6
+      "time": "13:50:00",
+      "classID": 6,
+      "link": "https://paste.myself5.de/epuwabumow.kotlin"
     }
   ],
   "questions": [
