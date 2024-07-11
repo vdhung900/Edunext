@@ -1,24 +1,21 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, DropdownButton, Dropdown, Row, Table, Accordion } from 'react-bootstrap';
-import { FaCommentDots, FaQuestionCircle } from 'react-icons/fa';
-
+import { FaQuestionCircle } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
 import SideBar from '../components/SideBar';
-import { AuthContext } from '../context/AuthContext';
 
 function CourseDetail() {
     const { id } = useParams();
-
     const [slots, setSlots] = useState([]);
     const [subjects, setSubjects] = useState([]);
     const [lecturers, setLecturers] = useState([]);
     const [classes, setClasses] = useState([]);
     const [semesters, setSemesters] = useState([]);
     const [questions, setQuestions] = useState([]);
-
+    const [selectedSlot, setSelectedSlot] = useState(null);
+    const [activeKey, setActiveKey] = useState(null);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -43,6 +40,24 @@ function CourseDetail() {
         fetchData();
     }, [id]);
 
+    const handleSelectedSlot = (slotId) => {
+        const selected = slots.find(slot => slot.id === slotId);
+        setSelectedSlot(selected);
+        const classId = selected ? selected.classID : null;
+        const index = selected ? slots.filter(slot => slot.classID === classId).findIndex(slot => slot.id === slotId) : null;
+        if (classId !== null && index !== null) {
+            setActiveKey(`${classId}-${index}`);
+        }
+    };
+
+    const handleAccordionClick = (eventKey) => {
+        if (activeKey === eventKey) {
+            setActiveKey(null);
+        } else {
+            setActiveKey(eventKey);
+        }
+    };
+
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
@@ -57,12 +72,12 @@ function CourseDetail() {
                     <Row className='mt-3'>
                         <Col style={{ display: 'flex' }}>
                             <h5
-                                style={{ color: '#297FFD', cursor: 'pointer', marginRight: '10px' }}
+                                style={{ textDecoration: 'underline', color: '#297FFD', cursor: 'pointer', marginRight: '10px' }}
                                 onClick={() => navigate('/')}
                             >
                                 Home
-                            </h5><h5>/</h5>
-                            <h5 style={{margin: '0px 10px'}}> {subjects.code} ↔ {subjects.name} </h5>
+                            </h5>
+                            <h5>/ {subjects.code} ↔ {subjects.name} </h5>
                         </Col>
                     </Row>
 
@@ -91,11 +106,11 @@ function CourseDetail() {
                                 variant="light"
                             >
                                 {
-                                    classes.map((classes) => {
-                                        const filteredSlots = slots.filter((slot) => slot.classID == classes.id);
-                                        if (classes.subjectID == subjects.id && filteredSlots.length > 0) {
+                                    classes.map((cls) => {
+                                        const filteredSlots = slots.filter((slot) => slot.classID == cls.id);
+                                        if (cls.subjectID == subjects.id && filteredSlots.length > 0) {
                                             return filteredSlots.map((slot, index) => (
-                                                <Dropdown.Item key={slot.id}>Slot {index + 1}</Dropdown.Item>
+                                                <Dropdown.Item key={slot.id} onClick={() => handleSelectedSlot(slot.id)}>Slot {index + 1}</Dropdown.Item>
                                             ));
                                         }
                                         return null;
@@ -144,14 +159,17 @@ function CourseDetail() {
 
                     <Row className='mt-3'>
                         <Col>
-                            <Accordion>
+                            <Accordion activeKey={activeKey}>
                                 {
                                     classes.map((cls) => {
                                         if (cls.subjectID == subjects.id) {
                                             const filteredSlots = slots.filter((slot) => slot.classID == cls.id);
                                             return filteredSlots.map((slot, index) => (
-                                                <Accordion.Item key={slot.id} eventKey={`${cls.id}-${index}`}>
-                                                    <Accordion.Header>Slot {index + 1}: {slot.slotName}</Accordion.Header>
+                                                <Accordion.Item
+                                                    key={`${cls.id}-${index}`}
+                                                    eventKey={`${cls.id}-${index}`}
+                                                >
+                                                    <Accordion.Header onClick={() => handleAccordionClick(`${cls.id}-${index}`)}>Slot {index + 1}: {slot.slotName}</Accordion.Header>
                                                     <Accordion.Body>
                                                         <p><strong>{slot.timestamp}</strong></p>
                                                         <p>{slot.detail}</p>
@@ -164,9 +182,9 @@ function CourseDetail() {
                                                             </thead>
                                                             <tbody>
                                                                 {
-                                                                    questions.filter((question) => question.slotID == slot.id).map((question) => (
+                                                                    questions.filter((question) => question.slotID === slot.id).map((question) => (
                                                                         <tr key={question.id}>
-                                                                             <td><a href={`/question/${question.id}/${subjects.id}`}><FaQuestionCircle /> {question.title}</a></td>
+                                                                            <td><a href={`/question/${question.id}/${subjects.id}`}><FaQuestionCircle /> {question.title}</a></td>
                                                                             <td>
                                                                                 <span className="text-danger">Custom</span>
                                                                                 <span style={{ marginLeft: '20px', border: '1px solid black', backgroundColor: '#skyblue', border: 'none' }} className="text-primary">On-going</span>
