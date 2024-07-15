@@ -47,7 +47,7 @@ function Question() {
             }
         };
         fetchData();
-    }, [id, answers]);
+    }, [id, answers, subid]);
 
     const formatTimestamp = (timestamp) => {
         const date = new Date(timestamp);

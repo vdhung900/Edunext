@@ -37,9 +37,9 @@ const SideBar = ({ isSidebarOpen, toggleSidebar }) => {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <Nav.Item className="toggle-sidebar d-flex mt-3" onClick={toggleSidebar}>
+        <div className="toggle-sidebar d-flex mt-3" onClick={toggleSidebar}>
           <FaBars style={{ marginLeft: '30px' }} />
-        </Nav.Item>
+        </div>
         <Nav.Item className='d-flex mt-3'>
           <Nav.Link onClick={() => navigate('/')} className="nav-link">
             <FaHome />

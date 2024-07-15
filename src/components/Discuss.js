@@ -1,11 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
-    Avatar, Box, Button, Paper, TextField, Typography,
+    Avatar, Box, Button, Paper, Typography,
     IconButton, Menu, MenuItem, CircularProgress
 } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import StarIcon from '@mui/icons-material/Star';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+const RichTextEditor = ({ content, setContent, placeholder }) => {
+    return (
+        <CKEditor
+            editor={ClassicEditor}
+            config={{
+                toolbar: [
+                    'bold', 'italic', 'strikethrough', 'underline', 'link', 'blockquote', 'code', 'horizontalLine',
+                    'imageUpload', 'insertTable', 'mediaEmbed', 'numberedList', 'bulletedList', 'todoList',
+                    'outdent', 'indent', 'undo', 'redo'
+                ],
+                heading: {
+                    options: [
+                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                        { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+                        { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+                        { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
+                    ]
+                }
+            }}
+            data={content}
+            onChange={(event, editor) => {
+                const data = editor.getData();
+                setContent(data);
+            }}
+        />
+    );
+};
 
 const TextBox = ({ onSend }) => {
     const [answerContent, setAnswerContent] = useState('');
@@ -18,31 +51,15 @@ const TextBox = ({ onSend }) => {
     };
 
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-end',
-                backgroundColor: 'white',
-                borderRadius: '10px',
-                marginBottom: '20px',
-            }}
-        >
-            <TextField
-                sx={{ flex: 1, width: '100%', marginBottom: '10px' }}
-                InputProps={{
-                    style: { color: 'black' },
-                }}
-                placeholder="Type your message here..."
-                multiline
-                rows={4}
-                value={answerContent}
-                onChange={(e) => setAnswerContent(e.target.value)}
-            />
-            <Button variant="contained" color="primary" onClick={handleSend} disabled={!answerContent.trim()}>
-                Send
-            </Button>
-        </Box>
+        <>
+            <RichTextEditor content={answerContent} setContent={setAnswerContent} />
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                <Button style={{ marginTop: '10px' }} variant="contained" color="primary" onClick={handleSend} disabled={!answerContent.trim()}>
+                    Send
+                </Button>
+            </Box>
+
+        </>
     );
 };
 
@@ -164,7 +181,7 @@ const Discuss = ({ answers, setAnswers, userId, questionId, formatTimestamp }) =
                 <Paper key={answer.id} sx={{ padding: '20px', margin: '20px 0', borderRadius: '10px', boxShadow: 3 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <Avatar sx={{ border: '1px solid black', marginRight: '10px' }} src='../ava.png'></Avatar>
+                            <Avatar sx={{ border: '1px solid black', marginRight: '10px' }} src='/ava.png'></Avatar>
                             <Box>
                                 <UserDetail userID={answer.userID} userDetails={userDetails} />
                                 <Typography variant="body2" color="textSecondary">{answer.timestamp}</Typography>
@@ -182,21 +199,17 @@ const Discuss = ({ answers, setAnswers, userId, questionId, formatTimestamp }) =
                         )}
                     </Box>
                     {editingAnswerId === answer.id ? (
-                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                            <TextField
-                                multiline
-                                fullWidth
-                                rows={4}
-                                value={editContent}
-                                onChange={(e) => setEditContent(e.target.value)}
-                            />
-                            <Button style={{ marginTop: '10px' }} variant="contained" color="primary" onClick={handleSaveEdit}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', width: '100%' }}>
+                            <Box sx={{ width: '100%' }}>
+                                <RichTextEditor content={editContent} setContent={setEditContent} />
+                            </Box>
+                            <Button style={{ marginTop: '10px', alignSelf: 'flex-end' }} variant="contained" color="primary" onClick={handleSaveEdit}>
                                 Save
                             </Button>
                         </Box>
                     ) : (
                         <Typography variant="body1" sx={{ marginBottom: '10px', marginLeft: '14px' }}>
-                            {answer.content}
+                            <div dangerouslySetInnerHTML={{ __html: answer.content }} />
                         </Typography>
                     )}
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

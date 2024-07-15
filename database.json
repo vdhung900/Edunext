@@ -196,37 +196,37 @@
       "id": 1,
       "className": "SE1712",
       "subjectID": "1",
-      "lectureID": "1"
+      "lectureID": "3"
     },
     {
       "id": 2,
       "className": "SE1802",
       "subjectID": "2",
-      "lectureID": "2"
+      "lectureID": "4"
     },
     {
       "id": 3,
       "className": "SE1735",
       "subjectID": "3",
-      "lectureID": "3"
+      "lectureID": "19"
     },
     {
       "id": 4,
       "className": "SE1874",
       "subjectID": "4",
-      "lectureID": "4"
+      "lectureID": "20"
     },
     {
       "id": 5,
       "className": "SE1705",
       "subjectID": "5",
-      "lectureID": "5"
+      "lectureID": "21"
     },
     {
       "id": 6,
       "className": "SE1868",
       "subjectID": "6",
-      "lectureID": "6"
+      "lectureID": "22"
     }
   ],
   "enrollment": [
@@ -473,38 +473,12 @@
     {
       "id": 1,
       "name": "Spring 2024",
-      "date": "2024-01-03"
+      "date": "2024-01-03T14:27:00.000Z"
     },
     {
       "id": 2,
       "name": "Summer 2024",
-      "date": "2024-05-03"
-    }
-  ],
-  "lecturer": [
-    {
-      "id": 1,
-      "name": "Lê Văn C"
-    },
-    {
-      "id": 2,
-      "name": "Phạm Thị D"
-    },
-    {
-      "id": 3,
-      "name": "Nguyễn Thị T"
-    },
-    {
-      "id": 4,
-      "name": "Trần Văn U"
-    },
-    {
-      "id": 5,
-      "name": "Lê Thị V"
-    },
-    {
-      "id": 6,
-      "name": "Phạm Văn D"
+      "date": "2024-05-03T10:45:00.000Z"
     }
   ],
   "slots": [
@@ -513,210 +487,210 @@
       "slotName": "Introduction to React",
       "detail": "Overview of React concepts",
       "classID": 1,
-      "timestamp": "09/07/2024 15:20:10"
+      "createAt": "2024-07-09T15:20:10.000Z"
     },
     {
       "id": 2,
       "slotName": "Hiragana Practice",
       "detail": "Practice recognizing and writing hiragana characters",
       "classID": 2,
-      "timestamp": "08/07/2024 10:45:28"
+      "createAt": "2024-07-08T10:45:28.000Z"
     },
     {
       "id": 3,
       "slotName": "Hiragana Practice",
       "detail": "Practice recognizing and writing hiragana characters",
       "classID": 3,
-      "timestamp": "07/07/2024 18:12:15"
+      "createAt": "2024-07-07T18:12:15.000Z"
     },
     {
       "id": 4,
       "slotName": "Sorting Algorithms Comparison",
       "detail": "Comparison of various sorting algorithms",
       "classID": 4,
-      "timestamp": "05/07/2024 21:05:59"
+      "createAt": "2024-07-05T21:05:59.000Z"
     },
     {
       "id": 5,
       "slotName": "Web Application Architecture",
       "detail": "High-level architecture design for web-based Java applications",
       "classID": 5,
-      "timestamp": "06/07/2024 16:30:45"
+      "createAt": "2024-07-06T16:30:45.000Z"
     },
     {
       "id": 6,
       "slotName": "Graph Algorithms",
       "detail": "Study and apply graph algorithms",
       "classID": 6,
-      "timestamp": "04/07/2024 09:55:36"
+      "createAt": "2024-07-04T09:55:36.000Z"
     },
     {
       "id": 7,
       "slotName": "Front-End React",
       "detail": "In-depth exploration of React for web development",
       "classID": 1,
-      "timestamp": "09/07/2024 10:00:00"
+      "createAt": "2024-07-09T10:00:00.000Z"
     },
     {
       "id": 8,
       "slotName": "React Components",
       "detail": "Hands-on React projects and component design",
       "classID": 1,
-      "timestamp": "08/07/2024 14:30:00"
+      "createAt": "2024-07-08T14:30:00.000Z"
     },
     {
       "id": 9,
       "slotName": "React State Management",
       "detail": "State management and Redux integration",
       "classID": 1,
-      "timestamp": "07/07/2024 11:45:00"
+      "createAt": "2024-07-07T11:45:00.000Z"
     },
     {
       "id": 10,
       "slotName": "React Hooks",
       "detail": "React Hooks and functional components",
       "classID": 1,
-      "timestamp": "06/07/2024 16:20:00"
+      "createAt": "2024-07-06T16:20:00.000Z"
     },
     {
       "id": 11,
       "slotName": "Japanese Basics",
       "detail": "Basic greetings and introductions in Japanese",
       "classID": 2,
-      "timestamp": "05/07/2024 13:10:00"
+      "createAt": "2024-07-05T13:10:00.000Z"
     },
     {
       "id": 12,
       "slotName": "Hiragana and Katakana",
       "detail": "Introduction to hiragana and katakana",
       "classID": 2,
-      "timestamp": "04/07/2024 10:45:00"
+      "createAt": "2024-07-04T10:45:00.000Z"
     },
     {
       "id": 13,
       "slotName": "Japanese Numbers",
       "detail": "Numbers and counting in Japanese",
       "classID": 2,
-      "timestamp": "03/07/2024 14:20:00"
+      "createAt": "2024-07-03T14:20:00.000Z"
     },
     {
       "id": 14,
       "slotName": "Daily Japanese",
       "detail": "Daily life vocabulary and phrases",
       "classID": 2,
-      "timestamp": "02/07/2024 09:30:00"
+      "createAt": "2024-07-02T09:30:00.000Z"
     },
     {
       "id": 15,
       "slotName": "Elementary Japanese Grammar",
       "detail": "Grammar fundamentals and sentence structure",
       "classID": 3,
-      "timestamp": "01/07/2024 17:15:00"
+      "createAt": "2024-07-01T17:15:00.000Z"
     },
     {
       "id": 16,
       "slotName": "Japanese Reading Practice",
       "detail": "Reading and comprehension exercises",
       "classID": 3,
-      "timestamp": "30/06/2024 11:00:00"
+      "createAt": "2024-06-30T11:00:00.000Z"
     },
     {
       "id": 17,
       "slotName": "Japanese Culture",
       "detail": "Cultural insights and customs in Japan",
       "classID": 3,
-      "timestamp": "29/06/2024 15:45:00"
+      "createAt": "2024-06-29T15:45:00.000Z"
     },
     {
       "id": 18,
       "slotName": "Japanese Writing",
       "detail": "Writing practice and kanji characters",
       "classID": 3,
-      "timestamp": "28/06/2024 12:30:00"
+      "createAt": "2024-06-28T12:30:00.000Z"
     },
     {
       "id": 19,
       "slotName": "OOP Principles",
       "detail": "Principles of encapsulation and inheritance",
       "classID": 4,
-      "timestamp": "27/06/2024 09:20:00"
+      "createAt": "2024-06-27T09:20:00.000Z"
     },
     {
       "id": 20,
       "slotName": "Polymorphism in Java",
       "detail": "Polymorphism and dynamic binding in Java",
       "classID": 4,
-      "timestamp": "26/06/2024 14:10:00"
+      "createAt": "2024-06-26T14:10:00.000Z"
     },
     {
       "id": 21,
       "slotName": "Design Patterns in OOP",
       "detail": "Design patterns and best practices",
       "classID": 4,
-      "timestamp": "25/06/2024 11:00:00"
+      "createAt": "2024-06-25T11:00:00.000Z"
     },
     {
       "id": 22,
       "slotName": "Software Architecture",
       "detail": "Software architecture and UML diagrams",
       "classID": 4,
-      "timestamp": "24/06/2024 16:30:00"
+      "createAt": "2024-06-24T16:30:00.000Z"
     },
     {
       "id": 23,
       "slotName": "Java Servlets",
       "detail": "Server-side programming with Java Servlets",
       "classID": 5,
-      "timestamp": "23/06/2024 13:45:00"
+      "createAt": "2024-06-23T13:45:00.000Z"
     },
     {
       "id": 24,
       "slotName": "JDBC Integration",
       "detail": "Database connectivity and JDBC integration",
       "classID": 5,
-      "timestamp": "22/06/2024 10:15:00"
+      "createAt": "2024-06-22T10:15:00.000Z"
     },
     {
       "id": 25,
       "slotName": "Web Security",
       "detail": "Web security and HTTPS protocols",
       "classID": 5,
-      "timestamp": "21/06/2024 15:20:00"
+      "createAt": "2024-06-21T15:20:00.000Z"
     },
     {
       "id": 26,
       "slotName": "RESTful APIs",
       "detail": "RESTful API design and implementation",
       "classID": 5,
-      "timestamp": "20/06/2024 09:30:00"
+      "createAt": "2024-06-20T09:30:00.000Z"
     },
     {
       "id": 27,
       "slotName": "Array Manipulation",
       "detail": "Array manipulation and searching algorithms",
       "classID": 6,
-      "timestamp": "19/06/2024 16:40:00"
+      "createAt": "2024-06-19T16:40:00.000Z"
     },
     {
       "id": 28,
       "slotName": "Linked Lists",
       "detail": "Linked list operations and complexity analysis",
       "classID": 6,
-      "timestamp": "18/06/2024 11:55:00"
+      "createAt": "2024-06-18T11:55:00.000Z"
     },
     {
       "id": 29,
       "slotName": "Binary Search Trees",
       "detail": "Binary search trees and traversal techniques",
       "classID": 6,
-      "timestamp": "17/06/2024 14:25:00"
+      "createAt": "2024-06-17T14:25:00.000Z"
     },
     {
       "id": 30,
       "slotName": "Graph Representation",
       "detail": "Graph representation and shortest path algorithms",
       "classID": 6,
-      "timestamp": "16/06/2024 10:00:00"
+      "createAt": "2024-06-16T10:00:00.000Z"
     }
   ],
   "assignments": [
@@ -726,8 +700,11 @@
       "slotID": 1,
       "title": "Complete React project",
       "content": "Finish the React project with Redux integration",
-      "date": "06/24/2024 14:30:00",
+      "createdAt": "2024-06-24T14:30:00.000Z",
+      "date": "2024-07-14T10:15:00.000Z",
       "classID": 1,
+      "status": true,
+      "lectureID": "3",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
@@ -736,8 +713,11 @@
       "slotID": 1,
       "title": "Write unit tests for components",
       "content": "Implement unit tests for React components using Jest",
-      "date": "06/25/2024 16:45:00",
+      "createdAt": "2024-06-25T16:45:00.000Z",
+      "date": "2024-07-14T09:30:00.000Z",
       "classID": 1,
+      "status": true,
+      "lectureID": "3",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
@@ -746,8 +726,11 @@
       "slotID": 3,
       "title": "Kanji Practice",
       "content": "Practice writing and reading Kanji characters",
-      "date": "06/26/2024 12:00:00",
+      "createdAt": "2024-06-26T12:00:00.000Z",
+      "date": "2024-07-14T08:45:00.000Z",
       "classID": 3,
+      "status": true,
+      "lectureID": "19",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
@@ -756,8 +739,11 @@
       "slotID": 3,
       "title": "Japanese Culture Presentation",
       "content": "Prepare and deliver a presentation on Japanese culture",
-      "date": "06/27/2024 18:20:00",
+      "createdAt": "2024-06-27T18:20:00.000Z",
+      "date": "2024-07-14T14:20:00.000Z",
       "classID": 3,
+      "status": true,
+      "lectureID": "19",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
@@ -766,8 +752,11 @@
       "slotID": 4,
       "title": "Design a web-based Java application",
       "content": "Design and prototype a Java web application using Spring Boot",
-      "date": "06/28/2024 15:10:00",
+      "createdAt": "2024-06-28T15:10:00.000Z",
+      "date": "2024-07-14T11:05:00.000Z",
       "classID": 4,
+      "status": true,
+      "lectureID": "20",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
@@ -776,8 +765,11 @@
       "slotID": 5,
       "title": "Implement user authentication",
       "content": "Implement user authentication using OAuth 2.0",
-      "date": "06/29/2024 19:00:00",
+      "createdAt": "2024-06-29T19:00:00.000Z",
+      "date": "2024-07-14T15:45:00.000Z",
       "classID": 5,
+      "status": true,
+      "lectureID": "21",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
@@ -786,8 +778,11 @@
       "slotID": 2,
       "title": "Hiragana Practice",
       "content": "Practice writing and reading Hiragana characters",
-      "date": "06/30/2024 16:40:00",
+      "createdAt": "2024-06-30T16:40:00.000Z",
+      "date": "2024-07-14T07:30:00.000Z",
       "classID": 2,
+      "status": true,
+      "lectureID": "4",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
@@ -796,8 +791,11 @@
       "slotID": 2,
       "title": "Introduction to Kanji",
       "content": "Learn basic Kanji characters and their meanings",
-      "date": "07/01/2024 14:15:00",
+      "createdAt": "2024-07-01T14:15:00.000Z",
+      "date": "2024-07-14T16:00:00.000Z",
       "classID": 2,
+      "status": true,
+      "lectureID": "4",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
@@ -806,8 +804,11 @@
       "slotID": 6,
       "title": "Sorting Algorithms Comparison",
       "content": "Compare various sorting algorithms based on efficiency and performance",
-      "date": "07/02/2024 17:30:00",
+      "createdAt": "2024-07-02T17:30:00.000Z",
+      "date": "2024-07-14T09:15:00.000Z",
       "classID": 6,
+      "status": true,
+      "lectureID": "22",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
@@ -816,8 +817,11 @@
       "slotID": 6,
       "title": "Graph Algorithms",
       "content": "Implement and analyze graph algorithms such as Dijkstra's and BFS",
-      "date": "07/03/2024 13:50:00",
+      "createdAt": "2024-07-03T13:50:00.000Z",
+      "date": "2024-07-14T13:25:00.000Z",
       "classID": 6,
+      "status": true,
+      "lectureID": "22",
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     }
   ],
@@ -827,476 +831,680 @@
       "title": "How does React handle state?",
       "content": "I'm confused about state management in React. Can someone explain?",
       "subjectCode": "FER202",
-      "slotID": 1
+      "slotID": 1,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-01T09:15:00Z"
     },
     {
       "id": 2,
       "title": "What are the benefits of using Redux?",
       "content": "Is Redux necessary for all React projects?",
       "subjectCode": "FER202",
-      "slotID": 1
+      "slotID": 1,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-02T14:30:00Z"
     },
     {
       "id": 3,
       "title": "How do you write hiragana characters?",
       "content": "I'm practicing hiragana. Any tips?",
       "subjectCode": "JPD113",
-      "slotID": 2
+      "slotID": 2,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-07-03T11:45:00Z"
     },
     {
       "id": 4,
       "title": "What's your favorite aspect of Japanese culture?",
       "content": "Share your thoughts on Japanese traditions, food, or art.",
       "subjectCode": "JPD123",
-      "slotID": 3
+      "slotID": 3,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-04T16:00:00Z"
     },
     {
       "id": 5,
       "title": "Which design pattern do you find most useful in Java applications?",
       "content": "Discuss your experiences with design patterns.",
       "subjectCode": "PRO192",
-      "slotID": 4
+      "slotID": 4,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-07-05T10:30:00Z"
     },
     {
       "id": 6,
       "title": "How do you approach graph algorithms?",
       "content": "Share insights on solving graph-related problems.",
       "subjectCode": "CSD201",
-      "slotID": 6
+      "slotID": 6,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-07-06T12:15:00Z"
     },
     {
       "id": 7,
       "title": "What is the significance of HTTP status codes?",
       "content": "Explain the meaning of different HTTP status code ranges (e.g., 200-299, 300-399, 400-499, 500-599) and their implications in web development.",
       "subjectCode": "PRJ301",
-      "slotID": 5
+      "slotID": 5,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-07T09:45:00Z"
     },
     {
       "id": 8,
       "title": "How do you send a GIF image as an HTTP response?",
       "content": "Describe the necessary steps to send a GIF image to the client as a response to an HTTP request.",
       "subjectCode": "PRJ301",
-      "slotID": 5
+      "slotID": 5,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-08T13:00:00Z"
     },
     {
       "id": 9,
       "title": "How can you optimize React component performance?",
       "content": "Discuss techniques for improving the performance of React components.",
       "subjectCode": "FER202",
-      "slotID": 1
+      "slotID": 1,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-09T11:30:00Z"
     },
     {
       "id": 10,
       "title": "When should you use React hooks?",
       "content": "Explain scenarios where using React hooks is beneficial.",
       "subjectCode": "FER202",
-      "slotID": 1
+      "slotID": 1,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-10T15:00:00Z"
     },
     {
       "id": 11,
       "title": "What are the different types of hiragana characters?",
       "content": "Provide an overview of the various types of hiragana characters.",
       "subjectCode": "JPD113",
-      "slotID": 2
+      "slotID": 2,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-07-11T10:45:00Z"
     },
     {
       "id": 12,
       "title": "How do you practice writing katakana effectively?",
       "content": "Share tips and methods for improving katakana writing skills.",
       "subjectCode": "JPD113",
-      "slotID": 2
+      "slotID": 2,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-07-12T14:15:00Z"
     },
     {
       "id": 13,
       "title": "What's the significance of traditional Japanese tea ceremonies?",
       "content": "Discuss the cultural importance and rituals of Japanese tea ceremonies.",
       "subjectCode": "JPD123",
-      "slotID": 3
+      "slotID": 3,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-13T11:00:00Z"
     },
     {
       "id": 14,
       "title": "How does Japanese calligraphy reflect cultural values?",
       "content": "Explore the relationship between Japanese calligraphy and cultural ideals.",
       "subjectCode": "JPD123",
-      "slotID": 3
+      "slotID": 3,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-14T16:30:00Z"
     },
     {
       "id": 15,
       "title": "Which design pattern is commonly used for database operations?",
       "content": "Discuss a design pattern suitable for handling database interactions in Java applications.",
       "subjectCode": "PRO192",
-      "slotID": 4
+      "slotID": 4,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-07-15T09:20:00Z"
     },
     {
       "id": 16,
       "title": "How do you implement the singleton pattern in Java?",
       "content": "Explain how to implement the singleton design pattern with Java code examples.",
       "subjectCode": "PRO192",
-      "slotID": 4
+      "slotID": 4,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-07-16T12:05:00Z"
     },
     {
       "id": 17,
       "title": "What are some real-world applications of graph algorithms?",
       "content": "Provide examples of how graph algorithms are used in practical scenarios.",
       "subjectCode": "CSD201",
-      "slotID": 6
+      "slotID": 6,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-07-17T10:10:00Z"
     },
     {
       "id": 18,
       "title": "How do you detect cycles in a graph?",
       "content": "Describe algorithms for detecting cycles in a graph data structure.",
       "subjectCode": "CSD201",
-      "slotID": 6
+      "slotID": 6,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-07-18T14:25:00Z"
     },
     {
       "id": 19,
       "title": "Explain the importance of status code 404 in web development.",
       "content": "Discuss the significance of HTTP status code 404 and its implications.",
       "subjectCode": "PRJ301",
-      "slotID": 5
+      "slotID": 5,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-19T11:35:00Z"
     },
     {
       "id": 20,
       "title": "How do you handle redirects in a web application?",
       "content": "Describe techniques for implementing HTTP redirects in web development.",
       "subjectCode": "PRJ301",
-      "slotID": 5
+      "slotID": 5,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-20T13:50:00Z"
     },
     {
       "id": 21,
       "title": "What are some best practices for frontend performance optimization?",
       "content": "Discuss techniques and strategies to optimize frontend performance in web development.",
       "subjectCode": "FER202",
-      "slotID": 7
+      "slotID": 7,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-01T10:05:00Z"
     },
     {
       "id": 22,
       "title": "How do you manage global state with React context?",
       "content": "Explain the usage of React context for managing global state across components.",
       "subjectCode": "FER202",
-      "slotID": 7
+      "slotID": 7,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-02T14:20:00Z"
     },
     {
       "id": 23,
       "title": "How do you pronounce and write basic hiragana characters?",
       "content": "Provide guidance on the pronunciation and writing of fundamental hiragana characters.",
       "subjectCode": "JPD113",
-      "slotID": 8
+      "slotID": 8,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-07-03T11:30:00Z"
     },
     {
       "id": 24,
       "title": "What are the differences between hiragana and katakana?",
       "content": "Explain the distinctions and usage scenarios between hiragana and katakana characters.",
       "subjectCode": "JPD113",
-      "slotID": 8
+      "slotID": 8,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-07-04T16:40:00Z"
     },
     {
       "id": 25,
       "title": "What are the traditional arts and crafts of Japan?",
       "content": "Explore various traditional art forms and crafts that are integral to Japanese culture.",
       "subjectCode": "JPD123",
-      "slotID": 9
+      "slotID": 9,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-05T09:15:00Z"
     },
     {
       "id": 26,
       "title": "How does Japanese architecture reflect cultural values?",
       "content": "Discuss the influence of cultural values on traditional Japanese architecture.",
       "subjectCode": "JPD123",
-      "slotID": 9
+      "slotID": 9,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-06T12:00:00Z"
     },
     {
       "id": 27,
       "title": "What is the DAO (Data Access Object) pattern in Java?",
       "content": "Explain the DAO pattern and its role in separating database access logic from business logic.",
       "subjectCode": "PRO192",
-      "slotID": 10
+      "slotID": 10,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-07-07T10:30:00Z"
     },
     {
       "id": 28,
       "title": "How do you handle concurrency issues in multithreaded Java applications?",
       "content": "Discuss strategies for managing concurrency and preventing race conditions in Java programs.",
       "subjectCode": "PRO192",
-      "slotID": 10
+      "slotID": 10,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-07-08T13:10:00Z"
     },
     {
       "id": 29,
       "title": "What are some real-world applications of Dijkstra's algorithm?",
       "content": "Provide examples of practical uses of Dijkstra's algorithm in various domains.",
       "subjectCode": "CSD201",
-      "slotID": 11
+      "slotID": 11,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-07-09T11:50:00Z"
     },
     {
       "id": 30,
       "title": "How do you implement depth-first search (DFS) in a graph?",
       "content": "Describe the implementation details of depth-first search algorithm in graph traversal.",
       "subjectCode": "CSD201",
-      "slotID": 11
+      "slotID": 11,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-07-10T15:20:00Z"
     },
     {
       "id": 31,
       "title": "Explain the purpose of HTTP status code 503 in web services.",
       "content": "Discuss the significance of HTTP status code 503 and its implications for web service availability.",
       "subjectCode": "PRJ301",
-      "slotID": 12
+      "slotID": 12,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-11T09:45:00Z"
     },
     {
       "id": 32,
       "title": "How do you handle authentication and authorization in RESTful APIs?",
       "content": "Describe approaches and best practices for implementing authentication and authorization mechanisms in RESTful API services.",
       "subjectCode": "PRJ301",
-      "slotID": 12
+      "slotID": 12,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-12T14:35:00Z"
     },
     {
       "id": 33,
       "title": "What are the key components of a scalable React application?",
       "content": "Discuss essential components and practices for building scalable React applications.",
       "subjectCode": "FER202",
-      "slotID": 13
+      "slotID": 13,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-13T11:15:00Z"
     },
     {
       "id": 34,
       "title": "How do you integrate React with external APIs?",
       "content": "Explain methods and considerations for integrating React applications with external APIs.",
       "subjectCode": "FER202",
-      "slotID": 13
+      "slotID": 13,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-14T16:25:00Z"
     },
     {
       "id": 35,
       "title": "What are some advanced techniques for mastering hiragana characters?",
       "content": "Explore advanced strategies and exercises for improving proficiency in hiragana writing and pronunciation.",
       "subjectCode": "JPD113",
-      "slotID": 14
+      "slotID": 14,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-07-15T10:05:00Z"
     },
     {
       "id": 36,
       "title": "How do you interpret and write complex katakana phrases?",
       "content": "Provide tips and examples for understanding and writing complex katakana expressions.",
       "subjectCode": "JPD113",
-      "slotID": 14
+      "slotID": 14,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-07-16T12:40:00Z"
     },
     {
       "id": 37,
       "title": "What are the modern adaptations of traditional Japanese arts?",
       "content": "Discuss contemporary interpretations and innovations in traditional Japanese arts and crafts.",
       "subjectCode": "JPD123",
-      "slotID": 15
+      "slotID": 15,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-17T11:20:00Z"
     },
     {
       "id": 38,
       "title": "How does Japanese literature reflect societal changes?",
       "content": "Explore the role of literature in reflecting and shaping societal shifts in Japan.",
       "subjectCode": "JPD123",
-      "slotID": 15
+      "slotID": 15,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-18T15:10:00Z"
     },
     {
       "id": 39,
       "title": "What are the benefits of using Hibernate in Java applications?",
       "content": "Discuss the advantages and features of Hibernate ORM framework for Java application development.",
       "subjectCode": "PRO192",
-      "slotID": 16
+      "slotID": 16,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-07-19T10:55:00Z"
     },
     {
       "id": 40,
       "title": "How do you manage database transactions in Hibernate?",
       "content": "Explain techniques for handling database transactions effectively with Hibernate.",
       "subjectCode": "PRO192",
-      "slotID": 16
+      "slotID": 16,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-07-20T14:30:00Z"
     },
     {
       "id": 41,
       "title": "What are some practical examples of applying graph algorithms in social networks?",
       "content": "Provide examples of how graph algorithms are used to analyze social network data.",
       "subjectCode": "CSD201",
-      "slotID": 17
+      "slotID": 17,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-07-21T09:40:00Z"
     },
     {
       "id": 42,
       "title": "How do you implement Prim's algorithm for finding minimum spanning trees?",
       "content": "Describe the steps and implementation details of Prim's algorithm for minimum spanning tree in graph theory.",
       "subjectCode": "CSD201",
-      "slotID": 17
+      "slotID": 17,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-07-22T11:05:00Z"
     },
     {
       "id": 43,
       "title": "Explain the concept of idempotency in RESTful API design.",
       "content": "Discuss the meaning and importance of idempotency in the context of RESTful API architecture.",
       "subjectCode": "PRJ301",
-      "slotID": 18
+      "slotID": 18,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-23T14:20:00Z"
     },
     {
       "id": 44,
       "title": "How do you handle versioning in RESTful API services?",
       "content": "Describe strategies and best practices for versioning RESTful API endpoints.",
       "subjectCode": "PRJ301",
-      "slotID": 18
+      "slotID": 18,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-24T09:35:00Z"
     },
     {
       "id": 45,
       "title": "How do you optimize React applications for SEO?",
       "content": "Discuss strategies and best practices for optimizing React applications for search engine visibility.",
       "subjectCode": "FER202",
-      "slotID": 19
+      "slotID": 19,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-25T10:05:00Z"
     },
     {
       "id": 46,
       "title": "What are the challenges of server-side rendering with React?",
       "content": "Explain the difficulties and considerations involved in implementing server-side rendering for React applications.",
       "subjectCode": "FER202",
-      "slotID": 19
+      "slotID": 19,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-07-26T14:20:00Z"
     },
     {
       "id": 47,
       "title": "How do you differentiate between similar-looking hiragana and katakana characters?",
       "content": "Provide techniques and examples for distinguishing between visually similar hiragana and katakana characters.",
       "subjectCode": "JPD113",
-      "slotID": 20
+      "slotID": 20,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-07-27T11:30:00Z"
     },
     {
       "id": 48,
       "title": "What are the cultural implications of calligraphy styles in Japan?",
       "content": "Discuss how different calligraphy styles reflect cultural nuances and historical contexts in Japan.",
       "subjectCode": "JPD113",
-      "slotID": 20
+      "slotID": 20,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-07-28T16:40:00Z"
     },
     {
       "id": 49,
       "title": "How do modern Japanese arts blend traditional and contemporary influences?",
       "content": "Explore the intersection of traditional Japanese arts with contemporary artistic trends.",
       "subjectCode": "JPD123",
-      "slotID": 21
+      "slotID": 21,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-29T09:15:00Z"
     },
     {
       "id": 50,
       "title": "What are the key themes in contemporary Japanese literature?",
       "content": "Discuss prominent themes and motifs in modern Japanese literary works.",
       "subjectCode": "JPD123",
-      "slotID": 21
+      "slotID": 21,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-07-30T12:00:00Z"
     },
     {
       "id": 51,
       "title": "What are the advantages of using JPA (Java Persistence API) in Java applications?",
       "content": "Explain the benefits and features of JPA for object-relational mapping in Java development.",
       "subjectCode": "PRO192",
-      "slotID": 22
+      "slotID": 22,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-07-31T10:30:00Z"
     },
     {
       "id": 52,
       "title": "How do you implement a many-to-many relationship in Hibernate?",
       "content": "Describe the steps for mapping and managing many-to-many associations using Hibernate.",
       "subjectCode": "PRO192",
-      "slotID": 22
+      "slotID": 22,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-08-01T13:10:00Z"
     },
     {
       "id": 53,
       "title": "What are some applications of the Floyd-Warshall algorithm in computer science?",
       "content": "Provide examples of practical uses of the Floyd-Warshall algorithm for shortest path calculations.",
       "subjectCode": "CSD201",
-      "slotID": 23
+      "slotID": 23,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-08-02T11:50:00Z"
     },
     {
       "id": 54,
       "title": "How do you implement breadth-first search (BFS) for graph traversal?",
       "content": "Explain the implementation details and use cases of breadth-first search algorithm in graph theory.",
       "subjectCode": "CSD201",
-      "slotID": 23
+      "slotID": 23,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-08-03T15:20:00Z"
     },
     {
       "id": 55,
       "title": "Explain the concept of content negotiation in RESTful API design.",
       "content": "Discuss the role of content negotiation in determining the appropriate representation of resources in RESTful APIs.",
       "subjectCode": "PRJ301",
-      "slotID": 24
+      "slotID": 24,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-08-04T09:45:00Z"
     },
     {
       "id": 56,
       "title": "How do you handle error responses in RESTful API services?",
       "content": "Describe strategies for handling and communicating error responses effectively in RESTful API implementations.",
       "subjectCode": "PRJ301",
-      "slotID": 24
+      "slotID": 24,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-08-05T14:35:00Z"
     },
     {
       "id": 57,
       "title": "How do you structure a large-scale React application?",
       "content": "Discuss architectural patterns and strategies for organizing large-scale React applications.",
       "subjectCode": "FER202",
-      "slotID": 25
+      "slotID": 25,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-08-06T11:15:00Z"
     },
     {
       "id": 58,
       "title": "What are the considerations for integrating React with TypeScript?",
       "content": "Explain best practices and considerations when using TypeScript with React for type safety and scalability.",
       "subjectCode": "FER202",
-      "slotID": 25
+      "slotID": 25,
+      "status": true,
+      "lectureID": "3",
+      "createdAt": "2024-08-07T16:25:00Z"
     },
     {
       "id": 59,
       "title": "How do you write and pronounce advanced hiragana phrases?",
       "content": "Provide guidance on writing and pronouncing complex hiragana phrases accurately.",
       "subjectCode": "JPD113",
-      "slotID": 26
+      "slotID": 26,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-08-08T10:05:00Z"
     },
     {
       "id": 60,
       "title": "What are the cultural implications of traditional Japanese pottery?",
       "content": "Discuss the cultural significance and artistic traditions of Japanese pottery.",
       "subjectCode": "JPD113",
-      "slotID": 26
+      "slotID": 26,
+      "status": true,
+      "lectureID": "19",
+      "createdAt": "2024-08-09T12:40:00Z"
     },
     {
       "id": 61,
       "title": "How do contemporary Japanese artists incorporate digital media?",
       "content": "Explore how modern Japanese artists integrate digital technologies into their creative practices.",
       "subjectCode": "JPD123",
-      "slotID": 27
+      "slotID": 27,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-08-10T11:20:00Z"
     },
     {
       "id": 62,
       "title": "What are the key characteristics of modern Japanese cinema?",
       "content": "Discuss notable features and themes in contemporary Japanese film production.",
       "subjectCode": "JPD123",
-      "slotID": 27
+      "slotID": 27,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-08-11T15:10:00Z"
     },
     {
       "id": 63,
       "title": "What are the advantages of using Spring Data JPA in Java applications?",
       "content": "Explain the benefits and features of Spring Data JPA for simplified data access in Java development.",
       "subjectCode": "PRO192",
-      "slotID": 28
+      "slotID": 28,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-08-12T10:55:00Z"
     },
     {
       "id": 64,
       "title": "How do you handle optimistic locking in Hibernate?",
       "content": "Describe strategies for implementing optimistic locking using Hibernate for data concurrency control.",
       "subjectCode": "PRO192",
-      "slotID": 28
+      "slotID": 28,
+      "status": true,
+      "lectureID": "21",
+      "createdAt": "2024-08-13T14:30:00Z"
     },
     {
       "id": 65,
       "title": "What are some applications of the A* (A-star) algorithm in pathfinding?",
       "content": "Provide examples of practical uses of the A* algorithm for efficient pathfinding in various applications.",
       "subjectCode": "CSD201",
-      "slotID": 29
+      "slotID": 29,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-08-14T11:00:00Z"
     },
     {
       "id": 66,
       "title": "How do you implement Kruskal's algorithm for finding minimum spanning trees?",
       "content": "Describe the steps and implementation details of Kruskal's algorithm for minimum spanning tree in graph theory.",
       "subjectCode": "CSD201",
-      "slotID": 29
+      "slotID": 29,
+      "status": true,
+      "lectureID": "22",
+      "createdAt": "2024-08-15T13:45:00Z"
     },
     {
       "id": 67,
       "title": "Explain the role of hypermedia in RESTful API design.",
       "content": "Discuss how hypermedia links enhance the discoverability and flexibility of RESTful APIs.",
       "subjectCode": "PRJ301",
-      "slotID": 30
+      "slotID": 30,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-08-16T09:30:00Z"
     },
     {
       "id": 68,
       "title": "How do you design pagination for large datasets in RESTful API services?",
       "content": "Describe strategies and best practices for implementing pagination in RESTful API endpoints handling large datasets.",
       "subjectCode": "PRJ301",
-      "slotID": 30
+      "slotID": 30,
+      "status": true,
+      "lectureID": "20",
+      "createdAt": "2024-08-17T11:10:00Z"
     }
   ],
   "answers": [
@@ -1307,7 +1515,7 @@
       "vote": 10,
       "subjectCode": "FER202",
       "content": "React handles state using component state (useState) and context (useContext). Component state allows individual components to manage their own state, while context provides a way to share state across components.",
-      "timestamp": "07/07/2024 08:20:42"
+      "createdAt": "2024-07-07T08:20:42Z"
     },
     {
       "id": 2,
@@ -1316,7 +1524,7 @@
       "vote": 15,
       "subjectCode": "FER202",
       "content": "React handles state using component state (useState) and context (useContext). Component state allows individual components to manage their own state, while context provides a way to share state across components.",
-      "timestamp": "09/07/2024 14:40:19"
+      "createdAt": "2024-07-09T14:40:19Z"
     },
     {
       "id": 3,
@@ -1325,7 +1533,7 @@
       "vote": 8,
       "subjectCode": "FER202",
       "content": "Redux is not necessary for all React projects, but it can be beneficial for managing global state and complex data flows.",
-      "timestamp": "08/07/2024 12:18:37"
+      "createdAt": "2024-07-08T12:18:37Z"
     },
     {
       "id": 4,
@@ -1334,7 +1542,7 @@
       "vote": 12,
       "subjectCode": "JPD113",
       "content": "When writing hiragana characters, practice stroke order and pay attention to subtle differences between similar characters.",
-      "timestamp": "06/07/2024 07:03:55"
+      "createdAt": "2024-07-06T07:03:55Z"
     },
     {
       "id": 5,
@@ -1343,7 +1551,7 @@
       "vote": 18,
       "subjectCode": "JPD123",
       "content": "Japanese culture has a rich history, beautiful traditions, and delicious food. Explore tea ceremonies, cherry blossoms, and sushi!",
-      "timestamp": "05/07/2024 19:28:24"
+      "createdAt": "2024-07-05T19:28:24Z"
     },
     {
       "id": 6,
@@ -1352,7 +1560,7 @@
       "vote": 5,
       "subjectCode": "PRO192",
       "content": "In Java applications, the Singleton design pattern is often useful for ensuring a single instance of a class.",
-      "timestamp": "04/07/2024 22:50:13"
+      "createdAt": "2024-07-04T22:50:13Z"
     },
     {
       "id": 7,
@@ -1361,7 +1569,7 @@
       "vote": 14,
       "subjectCode": "CSD201",
       "content": "Graph algorithms involve traversing and analyzing graphs. Consider depth-first search (DFS) and breadth-first search (BFS).",
-      "timestamp": "03/07/2024 11:15:08"
+      "createdAt": "2024-07-03T11:15:08Z"
     },
     {
       "id": 8,
@@ -1370,7 +1578,7 @@
       "vote": 20,
       "subjectCode": "PRJ301",
       "content": "HTTP status codes indicate the outcome of an HTTP request. For example, 200-299 range signifies success, while 400-499 indicates client errors.",
-      "timestamp": "02/07/2024 13:58:19"
+      "createdAt": "2024-07-02T13:58:19Z"
     },
     {
       "id": 9,
@@ -1379,7 +1587,7 @@
       "vote": 3,
       "subjectCode": "PRJ301",
       "content": "To send a GIF image as an HTTP response, set the appropriate content type (image/gif) and write the image data in the response body.",
-      "timestamp": "01/07/2024 07:42:55"
+      "createdAt": "2024-07-01T07:42:55Z"
     },
     {
       "id": 10,
@@ -1388,7 +1596,7 @@
       "vote": 17,
       "subjectCode": "FER202",
       "content": "In React, consider using the useEffect hook for handling side effects and managing component lifecycle.",
-      "timestamp": "09/07/2024 18:30:27"
+      "createdAt": "2024-07-09T18:30:27Z"
     },
     {
       "id": 11,
@@ -1397,7 +1605,7 @@
       "vote": 6,
       "subjectCode": "FER202",
       "content": "Redux simplifies state management by centralizing it in a global store. It's especially useful for large-scale applications.",
-      "timestamp": "08/07/2024 09:55:46"
+      "createdAt": "2024-07-08T09:55:46Z"
     },
     {
       "id": 12,
@@ -1406,7 +1614,7 @@
       "vote": 9,
       "subjectCode": "JPD113",
       "content": "Practice writing hiragana characters repeatedly to improve muscle memory and fluency.",
-      "timestamp": "06/07/2024 15:20:33"
+      "createdAt": "2024-07-06T15:20:33Z"
     },
     {
       "id": 13,
@@ -1415,7 +1623,7 @@
       "vote": 13,
       "subjectCode": "JPD123",
       "content": "Japanese art, including ukiyo-e prints and calligraphy, reflects the country's rich cultural heritage.",
-      "timestamp": "05/07/2024 12:40:18"
+      "createdAt": "2024-07-05T12:40:18Z"
     },
     {
       "id": 14,
@@ -1424,7 +1632,7 @@
       "vote": 4,
       "subjectCode": "PRO192",
       "content": "The Observer pattern is valuable for maintaining consistency between related objects in Java applications.",
-      "timestamp": "04/07/2024 17:10:09"
+      "createdAt": "2024-07-04T17:10:09Z"
     },
     {
       "id": 15,
@@ -1433,7 +1641,7 @@
       "vote": 11,
       "subjectCode": "CSD201",
       "content": "Graph algorithms like Dijkstra's shortest path algorithm are essential for solving network-related problems.",
-      "timestamp": "03/07/2024 08:45:59"
+      "createdAt": "2024-07-03T08:45:59Z"
     },
     {
       "id": 16,
@@ -1442,7 +1650,7 @@
       "vote": 19,
       "subjectCode": "PRJ301",
       "content": "HTTP status codes provide crucial information for debugging and handling different scenarios in web development.",
-      "timestamp": "02/07/2024 19:55:21"
+      "createdAt": "2024-07-02T19:55:21Z"
     },
     {
       "id": 17,
@@ -1451,7 +1659,7 @@
       "vote": 7,
       "subjectCode": "FER202",
       "content": "React's component lifecycle methods, such as componentDidMount and componentDidUpdate, allow you to manage side effects and state updates.",
-      "timestamp": "09/07/2024 10:05:14"
+      "createdAt": "2024-07-09T10:05:14Z"
     },
     {
       "id": 18,
@@ -1460,7 +1668,7 @@
       "vote": 16,
       "subjectCode": "FER202",
       "content": "Redux middleware, like thunk or saga, enables handling asynchronous actions and side effects in a predictable way.",
-      "timestamp": "08/07/2024 21:30:25"
+      "createdAt": "2024-07-08T21:30:25Z"
     },
     {
       "id": 19,
@@ -1469,7 +1677,7 @@
       "vote": 10,
       "subjectCode": "JPD113",
       "content": "Learn mnemonic devices or associations to remember hiragana characters more effectively.",
-      "timestamp": "06/07/2024 10:15:47"
+      "createdAt": "2024-07-06T10:15:47Z"
     },
     {
       "id": 20,
@@ -1478,91 +1686,7 @@
       "vote": 14,
       "subjectCode": "JPD123",
       "content": "Japanese calligraphy (shodo) combines artistry and discipline. Explore its beauty and learn basic strokes.",
-      "timestamp": "05/07/2024 08:20:36"
-    }
-  ],
-  "Group": [
-    {
-      "id": 1,
-      "Name": "Group 1"
-    },
-    {
-      "id": 2,
-      "Name": "Group 2"
-    },
-    {
-      "id": 3,
-      "Name": "Group 3"
-    },
-    {
-      "id": 4,
-      "Name": "Group 4"
-    },
-    {
-      "id": 5,
-      "Name": "Group 5"
-    },
-    {
-      "id": 6,
-      "Name": "Group 6"
-    }
-  ],
-  "EnrollmentGroup": [
-    {
-      "userID": 5,
-      "groupID": 1
-    },
-    {
-      "userID": 6,
-      "groupID": 3
-    },
-    {
-      "userID": 7,
-      "groupID": 2
-    },
-    {
-      "userID": 8,
-      "groupID": 4
-    },
-    {
-      "userID": 9,
-      "groupID": 6
-    },
-    {
-      "userID": 10,
-      "groupID": 1
-    },
-    {
-      "userID": 11,
-      "groupID": 3
-    },
-    {
-      "userID": 12,
-      "groupID": 5
-    },
-    {
-      "userID": 13,
-      "groupID": 2
-    },
-    {
-      "userID": 14,
-      "groupID": 4
-    },
-    {
-      "userID": 15,
-      "groupID": 6
-    },
-    {
-      "userID": 16,
-      "groupID": 1
-    },
-    {
-      "userID": 17,
-      "groupID": 3
-    },
-    {
-      "userID": 18,
-      "groupID": 5
+      "createdAt": "2024-07-05T08:20:36Z"
     }
   ],
   "submissions": [
@@ -1571,7 +1695,7 @@
       "assignmentID": 1,
       "submitted": "https://paste.myself5.de/nimicujifa.kotlin",
       "description": "",
-      "date": "06/09/2024 15:00:00",
+      "createdAt": "06/09/2024 15:00:00",
       "userID": 5,
       "score": 7
     },
@@ -1580,9 +1704,613 @@
       "assignmentID": 2,
       "submitted": "https://paste.myself5.de/nimicujifa.kotlin",
       "description": "",
-      "date": "06/09/2024 15:00:00",
+      "createdAt": "06/09/2024 15:00:00",
       "userID": 5,
       "score": 7
+    }
+  ],
+  "group": [
+    {
+      "id": 1,
+      "name": "Group 1",
+      "questionID": 1
+    },
+    {
+      "id": 2,
+      "name": "Group 2",
+      "questionID": 1
+    },
+    {
+      "id": 3,
+      "name": "Group 1",
+      "questionID": 2
+    },
+    {
+      "id": 4,
+      "name": "Group 2",
+      "questionID": 2
+    },
+    {
+      "id": 5,
+      "name": "Group 1",
+      "questionID": 3
+    },
+    {
+      "id": 6,
+      "name": "Group 2",
+      "questionID": 3
+    },
+    {
+      "id": 7,
+      "name": "Group 1",
+      "questionID": 4
+    },
+    {
+      "id": 8,
+      "name": "Group 2",
+      "questionID": 4
+    },
+    {
+      "id": 9,
+      "name": "Group 1",
+      "questionID": 5
+    },
+    {
+      "id": 10,
+      "name": "Group 2",
+      "questionID": 5
+    },
+    {
+      "id": 11,
+      "name": "Group 1",
+      "questionID": 6
+    },
+    {
+      "id": 12,
+      "name": "Group 2",
+      "questionID": 6
+    },
+    {
+      "id": 13,
+      "name": "Group 1",
+      "questionID": 7
+    },
+    {
+      "id": 14,
+      "name": "Group 2",
+      "questionID": 7
+    },
+    {
+      "id": 15,
+      "name": "Group 1",
+      "questionID": 8
+    },
+    {
+      "id": 16,
+      "name": "Group 2",
+      "questionID": 8
+    },
+    {
+      "id": 17,
+      "name": "Group 1",
+      "questionID": 9
+    },
+    {
+      "id": 18,
+      "name": "Group 2",
+      "questionID": 9
+    },
+    {
+      "id": 19,
+      "name": "Group 1",
+      "questionID": 10
+    },
+    {
+      "id": 20,
+      "name": "Group 2",
+      "questionID": 10
+    }
+  ],
+  "enrollmentgroup": [
+    {
+      "id": 1,
+      "groupID": 1,
+      "userID": 5
+    },
+    {
+      "id": 2,
+      "groupID": 1,
+      "userID": 6
+    },
+    {
+      "id": 3,
+      "groupID": 1,
+      "userID": 10
+    },
+    {
+      "id": 4,
+      "groupID": 1,
+      "userID": 15
+    },
+    {
+      "id": 5,
+      "groupID": 1,
+      "userID": 18
+    },
+    {
+      "id": 6,
+      "groupID": 2,
+      "userID": 7
+    },
+    {
+      "id": 7,
+      "groupID": 2,
+      "userID": 8
+    },
+    {
+      "id": 8,
+      "groupID": 2,
+      "userID": 9
+    },
+    {
+      "id": 9,
+      "groupID": 2,
+      "userID": 11
+    },
+    {
+      "id": 10,
+      "groupID": 2,
+      "userID": 12
+    },
+    {
+      "id": 11,
+      "groupID": 3,
+      "userID": 6
+    },
+    {
+      "id": 12,
+      "groupID": 3,
+      "userID": 11
+    },
+    {
+      "id": 13,
+      "groupID": 3,
+      "userID": 12
+    },
+    {
+      "id": 14,
+      "groupID": 3,
+      "userID": 13
+    },
+    {
+      "id": 15,
+      "groupID": 3,
+      "userID": 14
+    },
+    {
+      "id": 16,
+      "groupID": 4,
+      "userID": 5
+    },
+    {
+      "id": 17,
+      "groupID": 4,
+      "userID": 10
+    },
+    {
+      "id": 18,
+      "groupID": 4,
+      "userID": 16
+    },
+    {
+      "id": 19,
+      "groupID": 4,
+      "userID": 17
+    },
+    {
+      "id": 20,
+      "groupID": 4,
+      "userID": 19
+    },
+    {
+      "id": 21,
+      "groupID": 5,
+      "userID": 8
+    },
+    {
+      "id": 22,
+      "groupID": 5,
+      "userID": 9
+    },
+    {
+      "id": 23,
+      "groupID": 5,
+      "userID": 10
+    },
+    {
+      "id": 24,
+      "groupID": 5,
+      "userID": 14
+    },
+    {
+      "id": 25,
+      "groupID": 5,
+      "userID": 17
+    },
+    {
+      "id": 26,
+      "groupID": 6,
+      "userID": 13
+    },
+    {
+      "id": 27,
+      "groupID": 6,
+      "userID": 18
+    },
+    {
+      "id": 28,
+      "groupID": 6,
+      "userID": 15
+    },
+    {
+      "id": 29,
+      "groupID": 6,
+      "userID": 19
+    },
+    {
+      "id": 30,
+      "groupID": 6,
+      "userID": 20
+    },
+    {
+      "id": 31,
+      "groupID": 7,
+      "userID": 7
+    },
+    {
+      "id": 32,
+      "groupID": 7,
+      "userID": 8
+    },
+    {
+      "id": 33,
+      "groupID": 7,
+      "userID": 9
+    },
+    {
+      "id": 34,
+      "groupID": 7,
+      "userID": 10
+    },
+    {
+      "id": 35,
+      "groupID": 7,
+      "userID": 11
+    },
+    {
+      "id": 36,
+      "groupID": 8,
+      "userID": 12
+    },
+    {
+      "id": 37,
+      "groupID": 8,
+      "userID": 13
+    },
+    {
+      "id": 38,
+      "groupID": 8,
+      "userID": 14
+    },
+    {
+      "id": 39,
+      "groupID": 8,
+      "userID": 15
+    },
+    {
+      "id": 40,
+      "groupID": 8,
+      "userID": 16
+    },
+    {
+      "id": 41,
+      "groupID": 9,
+      "userID": 5
+    },
+    {
+      "id": 42,
+      "groupID": 9,
+      "userID": 6
+    },
+    {
+      "id": 43,
+      "groupID": 9,
+      "userID": 7
+    },
+    {
+      "id": 44,
+      "groupID": 9,
+      "userID": 8
+    },
+    {
+      "id": 45,
+      "groupID": 9,
+      "userID": 9
+    },
+    {
+      "id": 46,
+      "groupID": 10,
+      "userID": 10
+    },
+    {
+      "id": 47,
+      "groupID": 10,
+      "userID": 11
+    },
+    {
+      "id": 48,
+      "groupID": 10,
+      "userID": 12
+    },
+    {
+      "id": 49,
+      "groupID": 10,
+      "userID": 13
+    },
+    {
+      "id": 50,
+      "groupID": 10,
+      "userID": 14
+    },
+    {
+      "id": 51,
+      "groupID": 11,
+      "userID": 5
+    },
+    {
+      "id": 52,
+      "groupID": 11,
+      "userID": 6
+    },
+    {
+      "id": 53,
+      "groupID": 11,
+      "userID": 7
+    },
+    {
+      "id": 54,
+      "groupID": 11,
+      "userID": 8
+    },
+    {
+      "id": 55,
+      "groupID": 11,
+      "userID": 9
+    },
+    {
+      "id": 56,
+      "groupID": 12,
+      "userID": 10
+    },
+    {
+      "id": 57,
+      "groupID": 12,
+      "userID": 11
+    },
+    {
+      "id": 58,
+      "groupID": 12,
+      "userID": 12
+    },
+    {
+      "id": 59,
+      "groupID": 12,
+      "userID": 13
+    },
+    {
+      "id": 60,
+      "groupID": 12,
+      "userID": 14
+    },
+    {
+      "id": 61,
+      "groupID": 13,
+      "userID": 15
+    },
+    {
+      "id": 62,
+      "groupID": 13,
+      "userID": 16
+    },
+    {
+      "id": 63,
+      "groupID": 13,
+      "userID": 17
+    },
+    {
+      "id": 64,
+      "groupID": 13,
+      "userID": 18
+    },
+    {
+      "id": 65,
+      "groupID": 13,
+      "userID": 19
+    },
+    {
+      "id": 66,
+      "groupID": 14,
+      "userID": 5
+    },
+    {
+      "id": 67,
+      "groupID": 14,
+      "userID": 6
+    },
+    {
+      "id": 68,
+      "groupID": 14,
+      "userID": 7
+    },
+    {
+      "id": 69,
+      "groupID": 14,
+      "userID": 8
+    },
+    {
+      "id": 70,
+      "groupID": 14,
+      "userID": 9
+    },
+    {
+      "id": 71,
+      "groupID": 15,
+      "userID": 10
+    },
+    {
+      "id": 72,
+      "groupID": 15,
+      "userID": 11
+    },
+    {
+      "id": 73,
+      "groupID": 15,
+      "userID": 12
+    },
+    {
+      "id": 74,
+      "groupID": 15,
+      "userID": 13
+    },
+    {
+      "id": 75,
+      "groupID": 15,
+      "userID": 14
+    },
+    {
+      "id": 76,
+      "groupID": 16,
+      "userID": 15
+    },
+    {
+      "id": 77,
+      "groupID": 16,
+      "userID": 16
+    },
+    {
+      "id": 78,
+      "groupID": 16,
+      "userID": 17
+    },
+    {
+      "id": 79,
+      "groupID": 16,
+      "userID": 18
+    },
+    {
+      "id": 80,
+      "groupID": 16,
+      "userID": 19
+    },
+    {
+      "id": 81,
+      "groupID": 17,
+      "userID": 5
+    },
+    {
+      "id": 82,
+      "groupID": 17,
+      "userID": 6
+    },
+    {
+      "id": 83,
+      "groupID": 17,
+      "userID": 7
+    },
+    {
+      "id": 84,
+      "groupID": 17,
+      "userID": 8
+    },
+    {
+      "id": 85,
+      "groupID": 17,
+      "userID": 9
+    },
+    {
+      "id": 86,
+      "groupID": 18,
+      "userID": 10
+    },
+    {
+      "id": 87,
+      "groupID": 18,
+      "userID": 11
+    },
+    {
+      "id": 88,
+      "groupID": 18,
+      "userID": 12
+    },
+    {
+      "id": 89,
+      "groupID": 18,
+      "userID": 13
+    },
+    {
+      "id": 90,
+      "groupID": 18,
+      "userID": 14
+    },
+    {
+      "id": 91,
+      "groupID": 19,
+      "userID": 6
+    },
+    {
+      "id": 92,
+      "groupID": 19,
+      "userID": 7
+    },
+    {
+      "id": 93,
+      "groupID": 19,
+      "userID": 8
+    },
+    {
+      "id": 94,
+      "groupID": 19,
+      "userID": 9
+    },
+    {
+      "id": 95,
+      "groupID": 19,
+      "userID": 10
+    },
+    {
+      "id": 96,
+      "groupID": 20,
+      "userID": 11
+    },
+    {
+      "id": 97,
+      "groupID": 20,
+      "userID": 12
+    },
+    {
+      "id": 98,
+      "groupID": 20,
+      "userID": 13
+    },
+    {
+      "id": 99,
+      "groupID": 20,
+      "userID": 14
+    },
+    {
+      "id": 100,
+      "groupID": 20,
+      "userID": 15
     }
   ]
 }
