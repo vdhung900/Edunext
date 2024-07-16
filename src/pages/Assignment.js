@@ -80,7 +80,7 @@ function Assignment() {
             return "Missing";
         }
 
-        const submissionDate = new Date(submissions[0].date);
+        const submissionDate = new Date(submissions[0].createdAt);
         const assignmentDate = new Date(assignment.date);
         console.log(submissionDate, assignmentDate);
 
@@ -139,7 +139,7 @@ function Assignment() {
                             <div className="submission-tile">
                                 <h5>SUBMISSION TIME</h5>
                                 <br></br>
-                                <p>{submissions.length > 0 ? formatDate(submissions[0].date) : '-'}</p>
+                                <p>{submissions.length > 0 ? formatDate(submissions[0].createdAt) : '-'}</p>
                             </div>
                             <div className="submission-tile">
                                 <h5>LINK/FILE ASSIGNMENT</h5>
