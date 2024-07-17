@@ -70,6 +70,16 @@ function CourseDetail() {
         fetchData();
     }, [id]);
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        return `${day}/${month}/${year} ${hours}:${minutes}`;
+    };
+
     const getClassBySubjectID = (subjectID, classes) => {
         return classes.find(cls => cls.subjectID === subjectID);
     };
@@ -254,7 +264,7 @@ function CourseDetail() {
                                                     </Accordion.Header>
 
                                                     <Accordion.Body>
-                                                        <p><strong>{slot.createAt}</strong></p>
+                                                        <p>Due to: {formatDate(slot.createAt)}</p>
                                                         <p>{slot.detail}</p>
                                                         {roleName == 'Teacher' && (
                                                             groups.find((group) => group.slotID == slot.id) ? <p><strong>{groups.filter((group) => group.slotID == slot.id).length} Groups</strong></p> : 

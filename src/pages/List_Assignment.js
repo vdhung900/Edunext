@@ -106,7 +106,7 @@ const List_Assignment = () => {
                             Assignments
                         </Typography>
                         {roleName === 'Teacher' && (
-                            <Button variant="success" onClick={handleShow}>
+                            <Button variant="success" onClick={handleShow} style={{marginBottom: '20px'}}>
                                 Create Assignment
                             </Button>
                         )}

@@ -191,7 +191,7 @@ function Assignment() {
                                     <Button
                                         variant={assignment.status ? "primary" : "secondary"}
                                         onClick={toggleAssignmentVisibility}
-                                        style={{ marginTop: '10px' }}
+                                        style={{ margin: "0 10px" }}
                                     >
                                         {assignment.status ? "Hide Assignment" : "Show Assignment"}
                                     </Button>
