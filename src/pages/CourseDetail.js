@@ -292,7 +292,7 @@ function CourseDetail() {
                                                                 {questions.filter((question) => question.slotID === slot.id && question.status).map((question) => (
                                                                     <tr key={question.id}>
                                                                         <td>
-                                                                            <a href={`/question/${question.id}/${subjects.id}`}>
+                                                                            <a href={`/question/${question.id}/${subjects.id}/${slot.id}`}>
                                                                                 <FaQuestionCircle /> {question.title}
                                                                             </a>
                                                                         </td>
