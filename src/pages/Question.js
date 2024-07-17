@@ -47,7 +47,7 @@ function Question() {
             }
         };
         fetchData();
-    }, []);//id, answers, subid
+    }, [id, answers, subid]);
 
     const formatTimestamp = (timestamp) => {
         const date = new Date(timestamp);
@@ -114,7 +114,7 @@ function Question() {
                                 formatTimestamp={formatTimestamp}
                             />
                         )}
-                        {currentTab === 'group' && <Group slotID={slotid}/>}
+                        {currentTab === 'group' && <Group/>}
                         {currentTab === 'teacher-message' && <TeacherMessage />}
                     </div>
                 </Col>

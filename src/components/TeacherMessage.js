@@ -3,8 +3,8 @@ import { Box, Typography } from '@mui/material';
 import { FaRegComments } from 'react-icons/fa';
 
 function TeacherMessage() {
-  return (
-    <Box
+    return (
+        <Box
             sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -19,7 +19,7 @@ function TeacherMessage() {
                 THERE ARE NO COMMENTS!
             </Typography>
         </Box>
-  )
+    )
 }
 
 export default TeacherMessage
