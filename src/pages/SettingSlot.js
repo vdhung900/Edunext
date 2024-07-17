@@ -68,6 +68,30 @@ function SettingSlot() {
             const questionID = { ...addQuestion, id: questions.length + 1 };
             await axios.post('http://localhost:9999/questions', questionID);
             alert('Add Question Success');
+            setQuestions([...questions, questionID]); // Update the questions state with the new question
+            handleClose();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const handleHide = async (id) => {
+        try {
+            const updatedQuestion = questions.find((question) => question.id === id);
+            updatedQuestion.status = false;
+            await axios.put(`http://localhost:9999/questions/${id}`, updatedQuestion);
+            setQuestions(questions.map((question) => (question.id === id ? updatedQuestion : question)));
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const handleStart = async (id) => {
+        try {
+            const updatedQuestion = questions.find((question) => question.id === id);
+            updatedQuestion.status = true;
+            await axios.put(`http://localhost:9999/questions/${id}`, updatedQuestion);
+            setQuestions(questions.map((question) => (question.id === id ? updatedQuestion : question)));
         } catch (error) {
             console.log(error);
         }
@@ -107,6 +131,7 @@ function SettingSlot() {
                                 if(classItem.id == slot.classID){
                                     return <span style={{paddingLeft: '5px'}}>{classItem.className}</span>
                                 }
+                                return null;
                             })
                         }
                             </span>
@@ -134,15 +159,16 @@ function SettingSlot() {
                                                             {question.title}
                                                         </Card.Text>
                                                         <div>
-                                                            <Button variant="outline-primary" className="me-2">
+                                                            <Button variant="outline-primary" className="me-2" onClick={() => handleHide(question.id)}>
                                                                 HIDE
                                                             </Button>
-                                                            <Button variant="primary">START</Button>
+                                                            <Button variant="primary" onClick={() => handleStart(question.id)}>START</Button>
                                                         </div>
                                                     </Card.Body>
                                                 </Card>
                                             );
                                         }
+                                        return null;
                                     })}
                                     <Card.Body className="d-flex justify-content-start align-items-center">
                                         <Dropdown>
@@ -229,8 +255,22 @@ function SettingSlot() {
                                     <Col md={6}>
                                         <Form.Group className="mb-3" controlId="formStatus">
                                             <Form.Label>Status</Form.Label> <br />
-                                            <Form.Check type="checkbox" label="Yes" value={true} inline />
-                                            <Form.Check type="checkbox" label="No" value={false} inline />
+                                            <Form.Check
+                                                type="checkbox"
+                                                label="Yes"
+                                                value={true}
+                                                checked={addQuestion.status === true}
+                                                onChange={(e) => handleChange({ target: { name: 'status', value: true } })}
+                                                inline
+                                            />
+                                            <Form.Check
+                                                type="checkbox"
+                                                label="No"
+                                                value={false}
+                                                checked={addQuestion.status === false}
+                                                onChange={(e) => handleChange({ target: { name: 'status', value: false } })}
+                                                inline
+                                            />
                                         </Form.Group>
                                     </Col>
                                     <Col md={6}>

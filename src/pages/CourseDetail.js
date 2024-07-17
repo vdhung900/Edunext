@@ -30,8 +30,8 @@ function CourseDetail() {
         const fetchData = async () => {
             try {
                 const [
-                    slotsResponse, subjectsResponse, usersResponse, 
-                    classesResponse, semestersResponse, questionsResponse, 
+                    slotsResponse, subjectsResponse, usersResponse,
+                    classesResponse, semestersResponse, questionsResponse,
                     enrollmentResponse, groupsResponse, enrollmentGroupsResponse
                 ] = await Promise.all([
                     axios.get('http://localhost:9999/slots'),
@@ -92,11 +92,12 @@ function CourseDetail() {
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
+    
 
     const createAndDistributeGroups = async (numberOfGroups, slot) => {
         const newGroups = [];
         const newEnrollmentGroups = [];
-    
+
         // Create new groups
         for (let i = 1; i <= numberOfGroups; i++) {
             const group = {
@@ -106,7 +107,7 @@ function CourseDetail() {
             };
             newGroups.push(group);
         }
-    
+
         // Distribute students into groups evenly
         studentClass.forEach((student, index) => {
             const groupID = (index % numberOfGroups) + 1;
@@ -117,14 +118,14 @@ function CourseDetail() {
             };
             newEnrollmentGroups.push(enrollmentGroup);
         });
-    
+
         try {
             // Post each new group and update state
             for (const group of newGroups) {
                 const response = await axios.post('http://localhost:9999/group', group);
                 setGroups(prevGroups => [...prevGroups, response.data]); // Assuming response contains the created group with ID
             }
-    
+
             // Post each new enrollment group and update state
             for (const enrollmentGroup of newEnrollmentGroups) {
                 const response = await axios.post('http://localhost:9999/enrollmentgroup', enrollmentGroup);
@@ -137,8 +138,8 @@ function CourseDetail() {
             // Implement error handling based on your application's requirements
         }
     };
-    
-    
+
+
 
     if (loading) {
         return <div>Loading...</div>;
@@ -250,36 +251,36 @@ function CourseDetail() {
                                             return filteredSlots.map((slot, index) => (
                                                 <Accordion.Item key={slot.id} eventKey={`${cls.id}-${index}`}>
                                                     <Accordion.Header>
-                                                    <div className="d-flex justify-content-between w-100">
-                                                        <span>Slot {index + 1}: {slot.slotName}</span>
-                                                        {
-                                                            roleName == 'Teacher' && (
-                                                                <>
-                                                                    <a style={{color: '#297FFD', textDecoration: 'underline', cursor: 'pointer'}} onClick={() => navigate(`/setSlot/${userId}/${slot.id}/${subjects.code}`)} >Setting slot</a>
-                                                                    {/* <a >CREATE GROUP</a> */}
-                                                                </>
-                                                            )
-                                                        }
-                                                    </div>
+                                                        <div className="d-flex justify-content-between w-100">
+                                                            <span>Slot {index + 1}: {slot.slotName}</span>
+                                                            {
+                                                                roleName == 'Teacher' && (
+                                                                    <>
+                                                                        <a style={{ color: '#297FFD', textDecoration: 'underline', cursor: 'pointer' }} onClick={() => navigate(`/setSlot/${userId}/${slot.id}/${subjects.code}`)} >Setting slot</a>
+                                                                        {/* <a >CREATE GROUP</a> */}
+                                                                    </>
+                                                                )
+                                                            }
+                                                        </div>
                                                     </Accordion.Header>
 
                                                     <Accordion.Body>
                                                         <p>Due to: {formatDate(slot.createAt)}</p>
                                                         <p>{slot.detail}</p>
                                                         {roleName == 'Teacher' && (
-                                                            groups.find((group) => group.slotID == slot.id) ? <p><strong>{groups.filter((group) => group.slotID == slot.id).length} Groups</strong></p> : 
-                                                            <Button
-                                                                variant="primary"
-                                                                onClick={() => {
-                                                                    setShowModal(true);
-                                                                    setSelectedSlotID(slot.id);
-                                                                    console.log(slot.id);
-                                                                }}
-                                                            >
-                                                                Create Groups
-                                                            </Button>
+                                                            groups.find((group) => group.slotID == slot.id) ? <p><strong>{groups.filter((group) => group.slotID == slot.id).length} Groups</strong></p> :
+                                                                <Button
+                                                                    variant="primary"
+                                                                    onClick={() => {
+                                                                        setShowModal(true);
+                                                                        setSelectedSlotID(slot.id);
+                                                                        console.log(slot.id);
+                                                                    }}
+                                                                >
+                                                                    Create Groups
+                                                                </Button>
                                                         )}
-                                                        
+
                                                         <Table striped bordered hover>
                                                             <thead>
                                                                 <tr>
@@ -288,17 +289,19 @@ function CourseDetail() {
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                {
-                                                                    questions.filter((question) => question.slotID == slot.id).map((question) => (
-                                                                        <tr key={question.id}>
-                                                                            <td><a href={`/question/${question.id}/${subjects.id}/${slot.id}`}><FaQuestionCircle /> {question.title}</a></td>
-                                                                            <td>
-                                                                                <span className="text-danger">Custom</span>
-                                                                                <span style={{ marginLeft: '20px', border: '1px solid black', backgroundColor: '#skyblue', border: 'none' }} className="text-primary">On-going</span>
-                                                                            </td>
-                                                                        </tr>
-                                                                    ))
-                                                                }
+                                                                {questions.filter((question) => question.slotID === slot.id && question.status).map((question) => (
+                                                                    <tr key={question.id}>
+                                                                        <td>
+                                                                            <a href={`/question/${question.id}/${subjects.id}`}>
+                                                                                <FaQuestionCircle /> {question.title}
+                                                                            </a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <span className="text-danger">Custom</span>
+                                                                            <span style={{ marginLeft: '20px', border: '1px solid black', backgroundColor: '#skyblue', border: 'none' }} className="text-primary">On-going</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                ))}
                                                             </tbody>
                                                         </Table>
                                                     </Accordion.Body>
