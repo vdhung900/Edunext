@@ -77,22 +77,27 @@ function Home() {
 
     return (
       <>
-        <Form.Group as={Row} className="mb-4 semester-select">
-          <Form.Label column sm={1} htmlFor="semester">
-            SEMESTER:
-          </Form.Label>
-          <Col sm={4}>
-            <Form.Control
-              as="select"
-              id="semester"
-              onChange={(e) => handleSelected(parseInt(e.target.value))}
-            >
-              <option value="">Trial</option>
-              {semesters.map((semester) => (
-                <option key={semester.id} value={semester.id}>{semester.name}</option>
-              ))}
-            </Form.Control>
-          </Col>
+        <Form.Group className="mb-4 semester-select">
+          <Row>
+            <Col sm={1} style={{marginRight: '30px', marginTop: '7px'}}>
+              <Form.Label htmlFor="semester">
+                SEMESTER:
+              </Form.Label>
+            </Col>
+            <Col sm={4}>
+              <Form.Control
+                as="select"
+                id="semester"
+                onChange={(e) => handleSelected(parseInt(e.target.value))}
+              >
+                <option value="">Trial</option>
+                {semesters.map((semester) => (
+                  <option key={semester.id} value={semester.id}>{semester.name}</option>
+                ))}
+              </Form.Control>
+            </Col>
+          </Row>
+
         </Form.Group>
 
         <Row>
@@ -186,7 +191,7 @@ function Home() {
                           </Card.Title>
                           <div className='d-flex align-items-center mt-3'>
                             <FaChalkboardTeacher style={{ color: 'lightgrey', marginRight: '5px' }} />
-                            {classItem.className} - {subjectItem.code} 
+                            {classItem.className} - {subjectItem.code}
                           </div>
                         </div>
                       );

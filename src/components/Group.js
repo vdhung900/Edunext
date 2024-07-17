@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { Accordion, Spinner, Alert, Image, Container, Row, Col } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 import { FaCircle } from "react-icons/fa";
+import { Box, Typography } from '@mui/material';
+import { FaPeopleCarry } from "react-icons/fa";
 
 import './Group.css';  // Assuming you'll create a CSS file for custom styling
 
-function Group({ slotid }) {
+function Group() {
   const [users, setUsers] = useState([]);
   const [groups, setGroups] = useState([]);
   const [enrollmentGroups, setEnrollmentGroups] = useState([]);
@@ -14,6 +17,8 @@ function Group({ slotid }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { userId } = useContext(AuthContext);
+  const { slotid } = useParams();
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,13 +27,10 @@ function Group({ slotid }) {
         const [usersResponse, enrollmentGroupsResponse, groupsResponse] = await Promise.all([
           axios.get('http://localhost:9999/users'),
           axios.get('http://localhost:9999/enrollmentgroup'),
-          axios.get('http://localhost:9999/group', {
-            params: { slotID: slotid }
-          })
+          axios.get(`http://localhost:9999/group/?slotID=${slotid}`),
         ]);
-
         setUsers(usersResponse.data);
-        setGroups(groupsResponse.data);
+        setGroups(groupsResponse.data.map(group => group.id));
         setEnrollmentGroups(enrollmentGroupsResponse.data);
         setLoading(false);
       } catch (err) {
@@ -42,7 +44,7 @@ function Group({ slotid }) {
 
   useEffect(() => {
     if (enrollmentGroups.length > 0) {
-      const userEnrollment = enrollmentGroups.find(enroll => enroll.userID === userId);
+      const userEnrollment = enrollmentGroups.find(enroll => enroll.userID === userId && groups.includes(enroll.groupID));
       if (userEnrollment) {
         setGroupOfUser(userEnrollment.groupID);
       }
@@ -68,7 +70,7 @@ function Group({ slotid }) {
   }
 
   return (
-    <div className="group-container">
+    <div className="group-container" style={{ marginTop: '20px' }}>
       {usersInGroup.length > 0 ? (
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
@@ -86,7 +88,7 @@ function Group({ slotid }) {
                     </Col>
                     <Col sm={1}></Col>
                     <Col sm={5}>
-                      <span className={`status-indicator ${user.id === userId ? 'online' : 'offline'}`}><b><FaCircle style={{ width: '15px' }}/> {user.id === userId ? 'online' : 'offline'}</b></span>
+                      <span className={`status-indicator ${user.id === userId ? 'online' : 'offline'}`}><b><FaCircle style={{ width: '15px' }} /> {user.id === userId ? 'online' : 'offline'}</b></span>
                     </Col>
                   </Row>
                 ))}
@@ -95,7 +97,21 @@ function Group({ slotid }) {
           </Accordion.Item>
         </Accordion>
       ) : (
-        <p>No users found for this group.</p>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            color: 'grey',
+            marginTop: '20px',
+          }}
+        >
+          <FaPeopleCarry size={40} />
+          <Typography variant="h6" sx={{ marginLeft: '10px', fontWeight: 500 }}>
+            NO GROUP FOUND!
+          </Typography>
+        </Box>
       )}
     </div>
   );
