@@ -11,7 +11,7 @@ import '../components/styles.css';
 import { AuthContext } from '../context/AuthContext';
 
 function Question() {
-    const { id, subid } = useParams();
+    const { id, subid, slotid } = useParams();
     const [question, setQuestion] = useState({});
     const [answers, setAnswers] = useState([]);
     const [currentTab, setCurrentTab] = useState('discuss');
@@ -47,7 +47,7 @@ function Question() {
             }
         };
         fetchData();
-    }, [id, answers, subid]);
+    }, []);//id, answers, subid
 
     const formatTimestamp = (timestamp) => {
         const date = new Date(timestamp);
@@ -114,7 +114,7 @@ function Question() {
                                 formatTimestamp={formatTimestamp}
                             />
                         )}
-                        {currentTab === 'group' && <Group />}
+                        {currentTab === 'group' && <Group slotID={slotid}/>}
                         {currentTab === 'teacher-message' && <TeacherMessage />}
                     </div>
                 </Col>

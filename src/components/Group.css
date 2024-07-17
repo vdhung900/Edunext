@@ -1,0 +1,14 @@
+
+  .status-indicator.online {
+    color: green;
+  }
+  
+  .status-indicator.offline {
+    color: gray;
+  }
+
+  .col-sm-1 {
+    width: 6%;
+}
+
+  

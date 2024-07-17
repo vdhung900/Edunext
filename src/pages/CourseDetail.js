@@ -84,37 +84,49 @@ function CourseDetail() {
     const createAndDistributeGroups = async (numberOfGroups, slot) => {
         const newGroups = [];
         const newEnrollmentGroups = [];
-
+    
+        // Create new groups
         for (let i = 1; i <= numberOfGroups; i++) {
-            newGroups.push({
+            const group = {
                 id: groups.length + i,
                 name: `Group ${i}`,
                 slotID: slot
-            });
+            };
+            newGroups.push(group);
         }
-
+    
+        // Distribute students into groups evenly
         studentClass.forEach((student, index) => {
             const groupID = (index % numberOfGroups) + 1;
-            newEnrollmentGroups.push({
-                id: enrollmentGroups.length + index,
+            const enrollmentGroup = {
+                id: enrollmentGroups.length + index + 1, // Ensure each enrollment group has a unique ID
                 groupID: newGroups[groupID - 1].id,
                 userID: student.id
-            });
+            };
+            newEnrollmentGroups.push(enrollmentGroup);
         });
-
+    
         try {
-            // for (const group of newGroups) {
-            //     await axios.post('http://localhost:9999/group', group);
-            //     setGroups(prevGroups => [...prevGroups, group]);
-            // }
+            // Post each new group and update state
+            for (const group of newGroups) {
+                const response = await axios.post('http://localhost:9999/group', group);
+                setGroups(prevGroups => [...prevGroups, response.data]); // Assuming response contains the created group with ID
+            }
+    
+            // Post each new enrollment group and update state
             for (const enrollmentGroup of newEnrollmentGroups) {
                 const response = await axios.post('http://localhost:9999/enrollmentgroup', enrollmentGroup);
-                setEnrollmentGroups(prevEnrollmentGroups => [...prevEnrollmentGroups, response.data]);
+                setEnrollmentGroups(prevEnrollmentGroups => [...prevEnrollmentGroups, response.data]); // Assuming response contains the created enrollment group with ID
             }
+
+            alert('Created groups successfully!');
         } catch (err) {
-            console.log(err);
+            console.error('Error creating groups or enrollment groups:', err);
+            // Implement error handling based on your application's requirements
         }
     };
+    
+    
 
     if (loading) {
         return <div>Loading...</div>;
@@ -229,6 +241,7 @@ function CourseDetail() {
                                                     <Accordion.Body>
                                                         <p><strong>{slot.createAt}</strong></p>
                                                         <p>{slot.detail}</p>
+                                                        {groups.find((group) => group.slotID == slot.id) ? <p><strong>{groups.filter((group) => group.slotID == slot.id).length} Groups</strong></p> : 
                                                         <Button
                                                             variant="primary"
                                                             onClick={() => {
@@ -238,7 +251,8 @@ function CourseDetail() {
                                                             }}
                                                         >
                                                             Create Groups
-                                                        </Button>
+                                                        </Button>}
+                                                        
                                                         <Table striped bordered hover>
                                                             <thead>
                                                                 <tr>
@@ -250,7 +264,7 @@ function CourseDetail() {
                                                                 {
                                                                     questions.filter((question) => question.slotID == slot.id).map((question) => (
                                                                         <tr key={question.id}>
-                                                                            <td><a href={`/question/${question.id}/${subjects.id}`}><FaQuestionCircle /> {question.title}</a></td>
+                                                                            <td><a href={`/question/${question.id}/${subjects.id}/${slot.id}`}><FaQuestionCircle /> {question.title}</a></td>
                                                                             <td>
                                                                                 <span className="text-danger">Custom</span>
                                                                                 <span style={{ marginLeft: '20px', border: '1px solid black', backgroundColor: '#skyblue', border: 'none' }} className="text-primary">On-going</span>
