@@ -1,10 +1,11 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Col, Container, DropdownButton, Dropdown, Row, Table, Accordion } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import SideBar from '../components/SideBar';
 import CreateGroupModal from '../components/CreateGroupModal';
 import { FaQuestionCircle } from 'react-icons/fa';
+import { AuthContext } from '../context/AuthContext';
 
 function CourseDetail() {
     const { id } = useParams();
@@ -23,6 +24,7 @@ function CourseDetail() {
     const [selectedSlotID, setSelectedSlotID] = useState(null);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+    const { userId, roleName } = useContext(AuthContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -237,21 +239,36 @@ function CourseDetail() {
                                             const filteredSlots = slots.filter((slot) => slot.classID == cls.id);
                                             return filteredSlots.map((slot, index) => (
                                                 <Accordion.Item key={slot.id} eventKey={`${cls.id}-${index}`}>
-                                                    <Accordion.Header>Slot {index + 1}: {slot.slotName}</Accordion.Header>
+                                                    <Accordion.Header>
+                                                    <div className="d-flex justify-content-between w-100">
+                                                        <span>Slot {index + 1}: {slot.slotName}</span>
+                                                        {
+                                                            roleName == 'Teacher' && (
+                                                                <>
+                                                                    <a style={{color: '#297FFD', textDecoration: 'underline', cursor: 'pointer'}} onClick={() => navigate(`/setSlot/${userId}/${slot.id}/${subjects.code}`)} >Setting slot</a>
+                                                                    {/* <a >CREATE GROUP</a> */}
+                                                                </>
+                                                            )
+                                                        }
+                                                    </div>
+                                                    </Accordion.Header>
+
                                                     <Accordion.Body>
                                                         <p><strong>{slot.createAt}</strong></p>
                                                         <p>{slot.detail}</p>
-                                                        {groups.find((group) => group.slotID == slot.id) ? <p><strong>{groups.filter((group) => group.slotID == slot.id).length} Groups</strong></p> : 
-                                                        <Button
-                                                            variant="primary"
-                                                            onClick={() => {
-                                                                setShowModal(true);
-                                                                setSelectedSlotID(slot.id);
-                                                                console.log(slot.id);
-                                                            }}
-                                                        >
-                                                            Create Groups
-                                                        </Button>}
+                                                        {roleName == 'Teacher' && (
+                                                            groups.find((group) => group.slotID == slot.id) ? <p><strong>{groups.filter((group) => group.slotID == slot.id).length} Groups</strong></p> : 
+                                                            <Button
+                                                                variant="primary"
+                                                                onClick={() => {
+                                                                    setShowModal(true);
+                                                                    setSelectedSlotID(slot.id);
+                                                                    console.log(slot.id);
+                                                                }}
+                                                            >
+                                                                Create Groups
+                                                            </Button>
+                                                        )}
                                                         
                                                         <Table striped bordered hover>
                                                             <thead>

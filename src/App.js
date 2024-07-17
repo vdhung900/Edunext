@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Assignment from './pages/Assignment'
 import CourseDetail from './pages/CourseDetail';
 import List_Assignment from './pages/List_Assignment';
+import SettingSlot from './pages/SettingSlot';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/course/:id' element={<CourseDetail />} />
           <Route path='/assignment' element={<List_Assignment />} />
+          <Route path='/setSlot/:uid/:sid/:subid' element={<SettingSlot/>}/>
         </Routes>
       </BrowserRouter>
     </div>
