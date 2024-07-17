@@ -13,6 +13,7 @@ const CreateAssignment = ({ show, handleClose, userId, editID }) => {
   const [status, setStatus] = useState(true);
   const [dueDate, setDueDate] = useState('');
   const [error, setError] = useState('');
+  const [subjectCode, setSubjectCode] = useState('');
 
   useEffect(() => {
     const fetchClasses = async () => {
@@ -51,6 +52,7 @@ const CreateAssignment = ({ show, handleClose, userId, editID }) => {
         setDueDate(new Date(assignmentData.date).toISOString().slice(0, 16)); // Format the date
         setSelectedClass(assignmentData.classID);
         setSelectedSlot(assignmentData.slotID);
+        setSubjectCode(assignmentData.subjectCode);
       };
 
       fetchAssignment();
@@ -84,7 +86,9 @@ const CreateAssignment = ({ show, handleClose, userId, editID }) => {
     }
 
     const payload = {
-      subjectCode: classes.find(c => c.id === selectedClass)?.subjectCode,
+      subjectCode: editID
+        ? subjectCode
+        : classes.find(c => c.id === selectedClass)?.subjectCode,
       slotID: Number(selectedSlot),
       title,
       content,
