@@ -3,9 +3,10 @@ import axios from 'axios';
 import { Card, CardContent, Typography, Box, CircularProgress, Grid } from '@mui/material';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import SideBar from '../components/SideBar';
-import { FaBook, FaRegClock, FaChalkboardTeacher  } from "react-icons/fa";
+import { FaBook, FaRegClock, FaChalkboardTeacher } from "react-icons/fa";
+import CreateAssignment from '../components/CreateAssignment';
 
 const List_Assignment = () => {
     const [assignments, setAssignments] = useState([]);
@@ -14,7 +15,12 @@ const List_Assignment = () => {
     const [subjectMap, setSubjectMap] = useState({});
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-    const { userId } = useContext(AuthContext);
+    const { userId, roleName } = useContext(AuthContext);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleShow = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
+
     const navigate = useNavigate();
     if (!userId) {
         navigate('/login');
@@ -60,17 +66,24 @@ const List_Assignment = () => {
 
         const fetchData = async () => {
             try {
-                const enrollmentResponse = await axios.get(`http://localhost:9999/enrollment`, {
-                    params: { userID: userId },
-                });
-                const userClassIDs = enrollmentResponse.data.map(enrollment => enrollment.classID);
-
                 await fetchClassAndSubjectDetails();
 
-                const assignmentResponse = await axios.get(`http://localhost:9999/assignments`);
-                const filteredAssignments = assignmentResponse.data.filter(assignment => userClassIDs.includes(assignment.classID));
+                let assignmentResponse;
+                if (roleName === "Student") {
+                    const enrollmentResponse = await axios.get(`http://localhost:9999/enrollment`, {
+                        params: { userID: userId },
+                    });
+                    const userClassIDs = enrollmentResponse.data.map(enrollment => enrollment.classID);
 
-                setAssignments(filteredAssignments);
+                    assignmentResponse = await axios.get(`http://localhost:9999/assignments`);
+                    const filteredAssignments = assignmentResponse.data.filter(assignment =>
+                        userClassIDs.includes(assignment.classID) && assignment.status);
+
+                    setAssignments(filteredAssignments);
+                } else if (roleName === "Teacher") {
+                    assignmentResponse = await axios.get(`http://localhost:9999/assignments/?lectureID=${userId}`);
+                    setAssignments(assignmentResponse.data);
+                }
             } catch (error) {
                 console.error(error);
             } finally {
@@ -79,7 +92,7 @@ const List_Assignment = () => {
         };
 
         fetchData();
-    }, [userId, navigate]);
+    }, [userId, navigate, roleName]);
 
     return (
         <Container fluid>
@@ -92,6 +105,11 @@ const List_Assignment = () => {
                         <Typography variant="h4" gutterBottom>
                             Assignments
                         </Typography>
+                        {roleName === 'Teacher' && (
+                            <Button variant="success" onClick={handleShow}>
+                                Create Assignment
+                            </Button>
+                        )}
                         {loading ? (
                             <CircularProgress />
                         ) : (
@@ -104,14 +122,14 @@ const List_Assignment = () => {
                                                 <Typography variant="body2" sx={{ marginTop: '0' }}>Slot: {assignment.slotID}</Typography>
                                                 <div style={{ color: '#666' }}>
                                                     <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                                        <FaBook fontSize="small" /> 
-                                                        Subject: 
+                                                        <FaBook fontSize="small" />
+                                                        Subject:
                                                         <a href={`/course/${subjectMap[assignment.subjectCode]}`} style={{ color: '#38cb89', textDecoration: 'none' }}>
                                                             <strong>{assignment.subjectCode}</strong>
                                                         </a>
                                                     </Typography>
                                                     <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                                        <FaChalkboardTeacher  fontSize="small" /> Class: {classNames[assignment.classID]}
+                                                        <FaChalkboardTeacher fontSize="small" /> Class: {classNames[assignment.classID]}
                                                     </Typography>
                                                     <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                                         <FaRegClock fontSize="small" /> Due date: {formatTimestamp(assignment.date)}
@@ -131,6 +149,7 @@ const List_Assignment = () => {
                     </Box>
                 </Col>
             </Row>
+            <CreateAssignment show={showModal} handleClose={handleClose} userId={userId} />
         </Container>
     );
 };

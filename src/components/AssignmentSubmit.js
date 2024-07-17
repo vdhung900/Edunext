@@ -56,7 +56,7 @@ const AssignmentSubmit = ({ show, handleClose, assignmentDate, assignmentID, sub
             assignmentID: assignmentID,
             submitted: submissionLink,
             description: description,
-            date: new Date().toISOString(),
+            createdAt: new Date().toISOString(),
             userID: uId, // Replace with actual user ID
             score: 0
         };
