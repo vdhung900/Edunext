@@ -828,13 +828,25 @@
       "slotID": 1,
       "title": "123",
       "content": "123",
-      "createdAt": "2024-07-17T16:08:33.450Z",
-      "date": "2024-07-31T16:08:00.000Z",
+      "createdAt": "2024-07-17T17:43:07.188Z",
+      "date": "2024-07-31T02:08:00.000Z",
+      "classID": 1,
+      "status": false,
+      "lectureID": 3,
+      "link": "",
+      "id": 11
+    },
+    {
+      "slotID": 7,
+      "title": "123",
+      "content": "123",
+      "createdAt": "2024-07-17T17:42:14.867Z",
+      "date": "2024-07-30T17:42:00.000Z",
       "classID": 1,
       "status": true,
       "lectureID": 3,
       "link": "",
-      "id": 11
+      "id": 12
     }
   ],
   "questions": [
@@ -854,7 +866,7 @@
       "content": "Is Redux necessary for all React projects?",
       "subjectCode": "FER202",
       "slotID": 1,
-      "status": true,
+      "status": false,
       "lectureID": "3",
       "createdAt": "2024-07-02T14:30:00Z"
     },
@@ -1721,93 +1733,6 @@
       "score": 7
     }
   ],
-  "group": [
-    {
-      "id": 1,
-      "name": "Group 1",
-      "slotID": 1
-    },
-    {
-      "id": 2,
-      "name": "Group 2",
-      "slotID": 1
-    },
-    {
-      "id": 3,
-      "name": "Group 1",
-      "slotID": 8
-    }
-  ],
-  "enrollmentgroup": [
-    {
-      "id": 1,
-      "groupID": 1,
-      "userID": 5
-    },
-    {
-      "id": 2,
-      "groupID": 2,
-      "userID": 10
-    },
-    {
-      "id": 3,
-      "groupID": 1,
-      "userID": 15
-    },
-    {
-      "id": 4,
-      "groupID": 2,
-      "userID": 8
-    },
-    {
-      "id": 5,
-      "groupID": 1,
-      "userID": 18
-    },
-    {
-      "id": 6,
-      "groupID": 2,
-      "userID": 14
-    },
-    {
-      "id": 7,
-      "groupID": 1,
-      "userID": 18
-    },
-    {
-      "id": 8,
-      "groupID": 3,
-      "userID": 5
-    },
-    {
-      "id": 9,
-      "groupID": 3,
-      "userID": 10
-    },
-    {
-      "id": 10,
-      "groupID": 3,
-      "userID": 15
-    },
-    {
-      "id": 11,
-      "groupID": 3,
-      "userID": 8
-    },
-    {
-      "id": 12,
-      "groupID": 3,
-      "userID": 18
-    },
-    {
-      "id": 13,
-      "groupID": 3,
-      "userID": 14
-    },
-    {
-      "id": 14,
-      "groupID": 3,
-      "userID": 18
-    }
-  ]
+  "group": [],
+  "enrollmentgroup": []
 }

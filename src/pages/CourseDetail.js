@@ -4,8 +4,9 @@ import { Button, Col, Container, DropdownButton, Dropdown, Row, Table, Accordion
 import { useNavigate, useParams } from 'react-router-dom';
 import SideBar from '../components/SideBar';
 import CreateGroupModal from '../components/CreateGroupModal';
-import { FaQuestionCircle } from 'react-icons/fa';
+import { FaQuestionCircle, FaRegClock } from 'react-icons/fa';
 import { AuthContext } from '../context/AuthContext';
+import { FaPeopleGroup } from "react-icons/fa6";
 
 function CourseDetail() {
     const { id } = useParams();
@@ -92,7 +93,7 @@ function CourseDetail() {
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
-    
+
 
     const createAndDistributeGroups = async (numberOfGroups, slot) => {
         const newGroups = [];
@@ -222,7 +223,7 @@ function CourseDetail() {
                         </Col>
                         <Col md={5}>
                             <Button style={{ marginTop: '25px', marginRight: '10px' }} variant="primary" className="custom-button">LEARNING MATERIALS</Button>
-                            <Button style={{ marginTop: '25px' }} variant="primary" className="custom-button">ASSIGNMENTS</Button>
+                            <Button style={{ marginTop: '25px' }} variant="primary" className="custom-button" onClick={() => navigate('/assignment')}>ASSIGNMENTS</Button>
                         </Col>
                     </Row>
 
@@ -265,21 +266,29 @@ function CourseDetail() {
                                                     </Accordion.Header>
 
                                                     <Accordion.Body>
-                                                        <p>Due to: {formatDate(slot.createAt)}</p>
-                                                        <p>{slot.detail}</p>
-                                                        {roleName == 'Teacher' && (
-                                                            groups.find((group) => group.slotID == slot.id) ? <p><strong>{groups.filter((group) => group.slotID == slot.id).length} Groups</strong></p> :
-                                                                <Button
-                                                                    variant="primary"
-                                                                    onClick={() => {
-                                                                        setShowModal(true);
-                                                                        setSelectedSlotID(slot.id);
-                                                                        console.log(slot.id);
-                                                                    }}
-                                                                >
-                                                                    Create Groups
-                                                                </Button>
-                                                        )}
+                                                        <Row>
+                                                            <Col md={6}>
+                                                                <p>Due to: {formatDate(slot.createAt)}</p>
+                                                                <p>Slot detail: {slot.detail}</p>
+                                                            </Col>
+                                                            <Col md={6} style={{ textAlign: 'right' }}>
+                                                                {roleName == 'Teacher' && (
+                                                                    groups.find((group) => group.slotID == slot.id) ? <p><strong>{groups.filter((group) => group.slotID == slot.id).length} Groups</strong></p> :
+                                                                        <a
+                                                                            href='#'
+                                                                            onClick={() => {
+                                                                                setShowModal(true);
+                                                                                setSelectedSlotID(slot.id);
+                                                                                console.log(slot.id);
+                                                                            }}
+                                                                            style={{textDecoration: 'none'}}
+                                                                        >
+                                                                            <FaPeopleGroup style={{ marginRight: '5px',height: '30px', width: '30px' }}/><strong>Create Groups</strong>
+                                                                        </a>
+                                                                )}</Col>
+                                                        </Row>
+
+
 
                                                         <Table striped bordered hover>
                                                             <thead>
