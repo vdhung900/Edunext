@@ -858,7 +858,8 @@
       "slotID": 1,
       "status": true,
       "lectureID": "3",
-      "createdAt": "2024-07-01T09:15:00Z"
+      "createdAt": "2024-07-01T09:15:00Z",
+      "isHidden": false
     },
     {
       "id": 2,

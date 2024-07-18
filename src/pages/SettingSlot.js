@@ -3,7 +3,7 @@ import { Col, Container, Row, Button, Dropdown, Card, Breadcrumb, Modal, Form } 
 import { useNavigate, useParams } from 'react-router-dom';
 import SideBar from '../components/SideBar';
 import axios from 'axios';
-import { FiBookOpen, FiMessageSquare } from 'react-icons/fi';
+import { FiMessageSquare } from 'react-icons/fi';
 import { FaBook, FaCalendarAlt, FaChalkboardTeacher } from 'react-icons/fa';
 
 function SettingSlot() {
@@ -68,17 +68,18 @@ function SettingSlot() {
             const questionID = { ...addQuestion, id: questions.length + 1 };
             await axios.post('http://localhost:9999/questions', questionID);
             alert('Add Question Success');
-            setQuestions([...questions, questionID]); // Update the questions state with the new question
+            setQuestions([...questions, questionID]);
             handleClose();
         } catch (error) {
             console.log(error);
         }
     };
 
-    const handleHide = async (id) => {
+    const toggleButtonState = async (id, newStatus, newIsHidden) => {
         try {
             const updatedQuestion = questions.find((question) => question.id === id);
-            updatedQuestion.status = false;
+            updatedQuestion.status = newStatus;
+            updatedQuestion.isHidden = newIsHidden;
             await axios.put(`http://localhost:9999/questions/${id}`, updatedQuestion);
             setQuestions(questions.map((question) => (question.id === id ? updatedQuestion : question)));
         } catch (error) {
@@ -86,15 +87,14 @@ function SettingSlot() {
         }
     };
 
-    const handleStart = async (id) => {
-        try {
-            const updatedQuestion = questions.find((question) => question.id === id);
-            updatedQuestion.status = true;
-            await axios.put(`http://localhost:9999/questions/${id}`, updatedQuestion);
-            setQuestions(questions.map((question) => (question.id === id ? updatedQuestion : question)));
-        } catch (error) {
-            console.log(error);
-        }
+    const handleHide = (id) => {
+        toggleButtonState(id, false, true);
+        alert('Successfully updated hidden question status');
+    };
+
+    const handleStart = (id) => {
+        toggleButtonState(id, true, false);
+        alert('Successfully updated show question status');
     };
 
     return (
@@ -159,10 +159,19 @@ function SettingSlot() {
                                                             {question.title}
                                                         </Card.Text>
                                                         <div>
-                                                            <Button variant="outline-primary" className="me-2" onClick={() => handleHide(question.id)}>
+                                                            <Button
+                                                                variant={question.isHidden ? "primary" : "outline-primary"}
+                                                                className="me-2"
+                                                                onClick={() => handleHide(question.id)}
+                                                            >
                                                                 HIDE
                                                             </Button>
-                                                            <Button variant="primary" onClick={() => handleStart(question.id)}>START</Button>
+                                                            <Button
+                                                                variant={question.isHidden ? "outline-primary" : "primary"}
+                                                                onClick={() => handleStart(question.id)}
+                                                            >
+                                                                START
+                                                            </Button>
                                                         </div>
                                                     </Card.Body>
                                                 </Card>
@@ -219,7 +228,9 @@ function SettingSlot() {
                                             <Form.Control
                                                 type="text"
                                                 name="subjectCode"
-                                                value={addQuestion.subjectCode} readOnly
+                                                value={addQuestion.subjectCode}
+                                                onChange={handleChange}
+                                                placeholder="Enter subject code"
                                             />
                                         </Form.Group>
                                     </Col>
