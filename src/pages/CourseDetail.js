@@ -298,7 +298,7 @@ function CourseDetail() {
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                {questions.filter((question) => question.slotID === slot.id && question.status).map((question) => (
+                                                                {questions.filter((question) => question.slotID == parseInt(slot.id) && question.status).map((question) => (
                                                                     <tr key={question.id}>
                                                                         <td>
                                                                             <a href={`/question/${question.id}/${subjects.id}/${slot.id}`}>

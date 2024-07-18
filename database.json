@@ -825,28 +825,17 @@
       "link": "https://paste.myself5.de/epuwabumow.kotlin"
     },
     {
+      "subjectCode": "FER202",
       "slotID": 1,
       "title": "123",
       "content": "123",
-      "createdAt": "2024-07-17T17:43:07.188Z",
-      "date": "2024-07-31T02:08:00.000Z",
-      "classID": 1,
-      "status": false,
-      "lectureID": 3,
-      "link": "",
-      "id": 11
-    },
-    {
-      "slotID": 7,
-      "title": "123",
-      "content": "123",
-      "createdAt": "2024-07-17T17:42:14.867Z",
-      "date": "2024-07-30T17:42:00.000Z",
+      "createdAt": "2024-07-18T08:49:57.579Z",
+      "date": "2024-07-25T08:49:00.000Z",
       "classID": 1,
       "status": true,
       "lectureID": 3,
       "link": "",
-      "id": 12
+      "id": 11
     }
   ],
   "questions": [
@@ -869,7 +858,8 @@
       "slotID": 1,
       "status": false,
       "lectureID": "3",
-      "createdAt": "2024-07-02T14:30:00Z"
+      "createdAt": "2024-07-02T14:30:00Z",
+      "isHidden": true
     },
     {
       "id": 3,
@@ -1530,6 +1520,17 @@
       "status": true,
       "lectureID": "20",
       "createdAt": "2024-08-17T11:10:00Z"
+    },
+    {
+      "id": 69,
+      "title": "123",
+      "content": "123",
+      "subjectCode": "FER202",
+      "slotID": "1",
+      "status": false,
+      "lectureID": "3",
+      "createdAt": "2024-07-18T09:06:05.200Z",
+      "isHidden": true
     }
   ],
   "answers": [
@@ -1734,6 +1735,48 @@
       "score": 7
     }
   ],
-  "group": [],
-  "enrollmentgroup": []
+  "group": [
+    {
+      "id": 1,
+      "name": "Group 1",
+      "slotID": 7
+    }
+  ],
+  "enrollmentgroup": [
+    {
+      "id": 1,
+      "groupID": 1,
+      "userID": 5
+    },
+    {
+      "id": 2,
+      "groupID": 1,
+      "userID": 10
+    },
+    {
+      "id": 3,
+      "groupID": 1,
+      "userID": 15
+    },
+    {
+      "id": 4,
+      "groupID": 1,
+      "userID": 8
+    },
+    {
+      "id": 5,
+      "groupID": 1,
+      "userID": 18
+    },
+    {
+      "id": 6,
+      "groupID": 1,
+      "userID": 14
+    },
+    {
+      "id": 7,
+      "groupID": 1,
+      "userID": 18
+    }
+  ]
 }

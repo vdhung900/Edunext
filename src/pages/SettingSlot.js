@@ -51,14 +51,14 @@ function SettingSlot() {
         slotID: sid,
         status: true,
         lectureID: uid,
-        createdAt: '',
+        createdAt: new Date().toISOString(),
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setAddQuestion({
             ...addQuestion,
-            [name]: value,
+            [name]: name == 'slotID' ? parseInt(value) : value,
         });
     };
 
@@ -97,6 +97,16 @@ function SettingSlot() {
         alert('Successfully updated show question status');
     };
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        return `${day}/${month}/${year} ${hours}:${minutes}`;
+    };
+
     return (
         <Container fluid>
             <Row>
@@ -123,7 +133,7 @@ function SettingSlot() {
 
                     <Row className='mt-3'>
                         <Col>
-                            <span><FaCalendarAlt /> {slot.createAt}</span>
+                            <span><FaCalendarAlt /> {formatDate(slot.createAt)}</span>
                             <span style={{paddingLeft: '18px'}}><FaBook /><span style={{paddingLeft: '5px'}}>{subid}</span></span>
                             <span style={{paddingLeft: '18px'}}><FaChalkboardTeacher />
                             {
@@ -284,7 +294,7 @@ function SettingSlot() {
                                             />
                                         </Form.Group>
                                     </Col>
-                                    <Col md={6}>
+                                    {/* <Col md={6}>
                                         <Form.Group className="mb-3" controlId="formCreatedAt">
                                             <Form.Label>Created At</Form.Label>
                                             <Form.Control
@@ -295,7 +305,7 @@ function SettingSlot() {
                                                 placeholder="Enter creation date"
                                             />
                                         </Form.Group>
-                                    </Col>
+                                    </Col> */}
                                 </Row>
                                 <Button variant="primary" type="submit">
                                     Save Changes

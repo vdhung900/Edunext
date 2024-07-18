@@ -88,7 +88,7 @@ const CreateAssignment = ({ show, handleClose, userId, editID }) => {
     const payload = {
       subjectCode: editID
         ? subjectCode
-        : classes.find(c => c.id === selectedClass)?.subjectCode,
+        : classes.find(c => c.id == selectedClass)?.subjectCode,
       slotID: Number(selectedSlot),
       title,
       content,
