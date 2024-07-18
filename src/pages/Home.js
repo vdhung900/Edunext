@@ -79,7 +79,7 @@ function Home() {
       <>
         <Form.Group className="mb-4 semester-select">
           <Row>
-            <Col sm={1} style={{marginRight: '30px', marginTop: '7px'}}>
+            <Col sm={1} style={{ marginRight: '30px', marginTop: '7px' }}>
               <Form.Label htmlFor="semester">
                 SEMESTER:
               </Form.Label>
@@ -158,9 +158,11 @@ function Home() {
     return (
       <>
         <Form.Group as={Row} className="mb-4 semester-select">
-          <Form.Label column sm={1} htmlFor="semester">
-            SEMESTER:
-          </Form.Label>
+          <Col sm={1} style={{ marginRight: '30px', marginTop: '7px' }}>
+            <Form.Label htmlFor="semester">
+              SEMESTER:
+            </Form.Label>
+          </Col>
           <Col sm={4}>
             <Form.Control
               as="select"

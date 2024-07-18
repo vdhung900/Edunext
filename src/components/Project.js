@@ -28,9 +28,11 @@ function Project() {
         <Container fluid>
             <Row>
                 <Form.Group as={Row} className="mb-4 semester-select">
-                    <Form.Label style={{ marginRight: '10px'}} column sm={1} htmlFor="semester">
-                        SEMESTER:
-                    </Form.Label>
+                    <Col sm={1} style={{ marginRight: '30px', marginTop: '7px' }}>
+                        <Form.Label htmlFor="semester">
+                            SEMESTER:
+                        </Form.Label>
+                    </Col>
                     <Col sm={4}>
                         <Form.Control
                             as="select"
@@ -46,9 +48,9 @@ function Project() {
             </Row>
 
             <Row className="justify-content-md-center mt-3">
-                <img style={{width: '300px'}} src='/Box.png'/>
-                <p style={{color: '#0078D4', textAlign: 'center', fontSize: '20px', paddingTop: '20px'}}>No data available.</p>
-                <p style={{textAlign: 'center', fontSize: '24px'}}>Please contact your school administration for more information.</p>
+                <img style={{ width: '300px' }} src='/Box.png' />
+                <p style={{ color: '#0078D4', textAlign: 'center', fontSize: '20px', paddingTop: '20px' }}>No data available.</p>
+                <p style={{ textAlign: 'center', fontSize: '24px' }}>Please contact your school administration for more information.</p>
             </Row>
 
 
